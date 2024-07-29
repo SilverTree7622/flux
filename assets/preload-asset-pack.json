@@ -1,0 +1,102 @@
+{
+    "section1": {
+        "files": [
+            {
+                "url": "assets/img/1.png",
+                "type": "image",
+                "key": "1"
+            },
+            {
+                "url": "assets/img/2.png",
+                "type": "image",
+                "key": "2"
+            },
+            {
+                "url": "assets/img/3.png",
+                "type": "image",
+                "key": "3"
+            },
+            {
+                "url": "assets/img/4.png",
+                "type": "image",
+                "key": "4"
+            },
+            {
+                "url": [
+                    "assets/audio/BGM_InGame_01.ogg"
+                ],
+                "type": "audio",
+                "key": "BGM_InGame_01"
+            },
+            {
+                "url": "assets/img/click/catAndTxt.png",
+                "type": "image",
+                "key": "catAndTxt"
+            },
+            {
+                "url": "assets/img/retry/catAndTxt.png",
+                "type": "image",
+                "key": "catAndTxt_1"
+            },
+            {
+                "url": "assets/img/end/endPage.png",
+                "type": "image",
+                "key": "endPage"
+            },
+            {
+                "url": "assets/img/retry/errorEfx.png",
+                "type": "image",
+                "key": "errorEfx"
+            },
+            {
+                "url": "assets/img/game_screen.png",
+                "type": "image",
+                "key": "game_screen"
+            },
+            {
+                "url": [
+                    "assets/video/in_game_play.webm"
+                ],
+                "type": "video",
+                "key": "in_game_play"
+            },
+            {
+                "url": "assets/font/luckiestguy.ttf",
+                "type": "binary",
+                "key": "luckiestguy"
+            },
+            {
+                "url": "assets/img/Temp_UI_Tutorial_cursor_01.png",
+                "type": "image",
+                "key": "Temp_UI_Tutorial_cursor_01"
+            },
+            {
+                "url": "assets/img/interactive/stage1/txtbox.png",
+                "type": "image",
+                "key": "txtbox"
+            },
+            {
+                "url": "assets/img/interactive/stage2/txtbox.png",
+                "type": "image",
+                "key": "txtbox_1"
+            },
+            {
+                "url": "assets/img/interactive/stage3/txtbox.png",
+                "type": "image",
+                "key": "txtbox_2"
+            },
+            {
+                "url": "assets/img/interactive/stage4/txtbox.png",
+                "type": "image",
+                "key": "txtbox_3"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2,
+        "showAllFilesInBlocks": false
+    }
+}
