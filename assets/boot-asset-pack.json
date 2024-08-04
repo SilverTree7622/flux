@@ -12,6 +12,16 @@
                 "key": "iconAndTxt"
             },
             {
+                "url": "assets/img/booting/loadingBackground.png",
+                "type": "image",
+                "key": "loadingBackground"
+            },
+            {
+                "url": "assets/img/booting/loadingPageIconTxt.png",
+                "type": "image",
+                "key": "loadingPageIconTxt"
+            },
+            {
                 "url": "assets/font/remissis sb.otf",
                 "type": "binary",
                 "key": "remissis sb"

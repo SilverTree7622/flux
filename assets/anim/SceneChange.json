@@ -1,0 +1,289 @@
+{
+    "anims": [
+        {
+            "key": "scene_change",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "efx_scene_change_00",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_01",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_02",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_03",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_04",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_05",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_06",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_07",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_08",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_09",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_10",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_11",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_12",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_13",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_14",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_15",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_16",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_17",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_18",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_19",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_20",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_21",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_22",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_23",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_24",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_25",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_26",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_27",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_28",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_29",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_30",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_31",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_32",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_33",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_34",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_35",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_36",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_37",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_38",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_39",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_40",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_41",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_42",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_43",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_44",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_45",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_46",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_47",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_48",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_49",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_50",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_51",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "efx_scene_change_52",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "randomFrame": false,
+            "hideOnComplete": true
+        }
+    ],
+    "globalTimeScale": 1,
+    "meta": {
+        "app": "Phaser Editor 2D v3",
+        "contentType": "Phaser v3 Animations"
+    },
+    "settings": {
+        "sourceLang": "TYPE_SCRIPT",
+        "esModule": false,
+        "generateCode": false
+    }
+}

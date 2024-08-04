@@ -12,14 +12,24 @@
                 "key": "2"
             },
             {
-                "url": "assets/img/3.png",
+                "url": "assets/img/click/Really/A_big.png",
                 "type": "image",
-                "key": "3"
+                "key": "A_big"
             },
             {
-                "url": "assets/img/4.png",
+                "url": "assets/img/click/Tap/A_big.png",
                 "type": "image",
-                "key": "4"
+                "key": "A_big_1"
+            },
+            {
+                "url": "assets/img/click/Really/A_small.png",
+                "type": "image",
+                "key": "A_small"
+            },
+            {
+                "url": "assets/img/click/Tap/A_small.png",
+                "type": "image",
+                "key": "A_small_1"
             },
             {
                 "url": [
@@ -29,29 +39,415 @@
                 "key": "BGM_InGame_01"
             },
             {
-                "url": "assets/img/click/catAndTxt.png",
+                "url": "assets/img/block/blockTile.png",
                 "type": "image",
-                "key": "catAndTxt"
+                "key": "blockTile"
             },
             {
-                "url": "assets/img/retry/catAndTxt.png",
-                "type": "image",
-                "key": "catAndTxt_1"
+                "url": [
+                    "assets/audio/sfx/cat_meow.mp3"
+                ],
+                "type": "audio",
+                "key": "cat_meow"
             },
             {
-                "url": "assets/img/end/endPage.png",
+                "url": "assets/img/click/clickBackground.png",
                 "type": "image",
-                "key": "endPage"
+                "key": "clickBackground"
             },
             {
-                "url": "assets/img/retry/errorEfx.png",
+                "url": "assets/img/click/clickCat.png",
                 "type": "image",
-                "key": "errorEfx"
+                "key": "clickCat"
+            },
+            {
+                "url": "assets/img/click/clickFinger.png",
+                "type": "image",
+                "key": "clickFinger"
+            },
+            {
+                "url": "assets/img/click/clickTile.png",
+                "type": "image",
+                "key": "clickTile"
+            },
+            {
+                "url": "assets/img/click/clickTileHelicopter.png",
+                "type": "image",
+                "key": "clickTileHelicopter"
+            },
+            {
+                "url": "assets/img/click/Really/e_big.png",
+                "type": "image",
+                "key": "e_big"
+            },
+            {
+                "url": "assets/img/click/Really/e_small.png",
+                "type": "image",
+                "key": "e_small"
+            },
+            {
+                "url": "assets/img/click/Sweetie/e1_big.png",
+                "type": "image",
+                "key": "e1_big"
+            },
+            {
+                "url": "assets/img/click/Sweetie/e1_small.png",
+                "type": "image",
+                "key": "e1_small"
+            },
+            {
+                "url": "assets/img/click/Sweetie/e2_big.png",
+                "type": "image",
+                "key": "e2_big"
+            },
+            {
+                "url": "assets/img/click/Sweetie/e2_small.png",
+                "type": "image",
+                "key": "e2_small"
+            },
+            {
+                "url": "assets/img/click/Sweetie/e3_big.png",
+                "type": "image",
+                "key": "e3_big"
+            },
+            {
+                "url": "assets/img/click/Sweetie/e3_small.png",
+                "type": "image",
+                "key": "e3_small"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_00.png",
+                "type": "image",
+                "key": "efx_scene_change_00"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_01.png",
+                "type": "image",
+                "key": "efx_scene_change_01"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_02.png",
+                "type": "image",
+                "key": "efx_scene_change_02"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_03.png",
+                "type": "image",
+                "key": "efx_scene_change_03"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_04.png",
+                "type": "image",
+                "key": "efx_scene_change_04"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_05.png",
+                "type": "image",
+                "key": "efx_scene_change_05"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_06.png",
+                "type": "image",
+                "key": "efx_scene_change_06"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_07.png",
+                "type": "image",
+                "key": "efx_scene_change_07"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_08.png",
+                "type": "image",
+                "key": "efx_scene_change_08"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_09.png",
+                "type": "image",
+                "key": "efx_scene_change_09"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_10.png",
+                "type": "image",
+                "key": "efx_scene_change_10"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_11.png",
+                "type": "image",
+                "key": "efx_scene_change_11"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_12.png",
+                "type": "image",
+                "key": "efx_scene_change_12"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_13.png",
+                "type": "image",
+                "key": "efx_scene_change_13"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_14.png",
+                "type": "image",
+                "key": "efx_scene_change_14"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_15.png",
+                "type": "image",
+                "key": "efx_scene_change_15"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_16.png",
+                "type": "image",
+                "key": "efx_scene_change_16"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_17.png",
+                "type": "image",
+                "key": "efx_scene_change_17"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_18.png",
+                "type": "image",
+                "key": "efx_scene_change_18"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_19.png",
+                "type": "image",
+                "key": "efx_scene_change_19"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_20.png",
+                "type": "image",
+                "key": "efx_scene_change_20"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_21.png",
+                "type": "image",
+                "key": "efx_scene_change_21"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_22.png",
+                "type": "image",
+                "key": "efx_scene_change_22"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_23.png",
+                "type": "image",
+                "key": "efx_scene_change_23"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_24.png",
+                "type": "image",
+                "key": "efx_scene_change_24"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_25.png",
+                "type": "image",
+                "key": "efx_scene_change_25"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_26.png",
+                "type": "image",
+                "key": "efx_scene_change_26"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_27.png",
+                "type": "image",
+                "key": "efx_scene_change_27"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_28.png",
+                "type": "image",
+                "key": "efx_scene_change_28"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_29.png",
+                "type": "image",
+                "key": "efx_scene_change_29"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_30.png",
+                "type": "image",
+                "key": "efx_scene_change_30"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_31.png",
+                "type": "image",
+                "key": "efx_scene_change_31"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_32.png",
+                "type": "image",
+                "key": "efx_scene_change_32"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_33.png",
+                "type": "image",
+                "key": "efx_scene_change_33"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_34.png",
+                "type": "image",
+                "key": "efx_scene_change_34"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_35.png",
+                "type": "image",
+                "key": "efx_scene_change_35"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_36.png",
+                "type": "image",
+                "key": "efx_scene_change_36"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_37.png",
+                "type": "image",
+                "key": "efx_scene_change_37"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_38.png",
+                "type": "image",
+                "key": "efx_scene_change_38"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_39.png",
+                "type": "image",
+                "key": "efx_scene_change_39"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_40.png",
+                "type": "image",
+                "key": "efx_scene_change_40"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_41.png",
+                "type": "image",
+                "key": "efx_scene_change_41"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_42.png",
+                "type": "image",
+                "key": "efx_scene_change_42"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_43.png",
+                "type": "image",
+                "key": "efx_scene_change_43"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_44.png",
+                "type": "image",
+                "key": "efx_scene_change_44"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_45.png",
+                "type": "image",
+                "key": "efx_scene_change_45"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_46.png",
+                "type": "image",
+                "key": "efx_scene_change_46"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_47.png",
+                "type": "image",
+                "key": "efx_scene_change_47"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_48.png",
+                "type": "image",
+                "key": "efx_scene_change_48"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_49.png",
+                "type": "image",
+                "key": "efx_scene_change_49"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_50.png",
+                "type": "image",
+                "key": "efx_scene_change_50"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_51.png",
+                "type": "image",
+                "key": "efx_scene_change_51"
+            },
+            {
+                "url": "assets/img/efx/efx_scene_change_52.png",
+                "type": "image",
+                "key": "efx_scene_change_52"
+            },
+            {
+                "url": [
+                    "assets/video/ending.webm"
+                ],
+                "type": "video",
+                "key": "ending"
+            },
+            {
+                "url": [
+                    "assets/audio/sfx/error.wav"
+                ],
+                "type": "audio",
+                "key": "error"
             },
             {
                 "url": "assets/img/game_screen.png",
                 "type": "image",
                 "key": "game_screen"
+            },
+            {
+                "url": "assets/img/interactive/guideStaticBlocks1.png",
+                "type": "image",
+                "key": "guideStaticBlocks1"
+            },
+            {
+                "url": "assets/img/interactive/guideStaticBlocks2.png",
+                "type": "image",
+                "key": "guideStaticBlocks2"
+            },
+            {
+                "url": "assets/img/interactive/guideStaticBlocks3.png",
+                "type": "image",
+                "key": "guideStaticBlocks3"
+            },
+            {
+                "url": "assets/img/interactive/guideStaticBlocks4.png",
+                "type": "image",
+                "key": "guideStaticBlocks4"
+            },
+            {
+                "url": "assets/img/interactive/guideTxtbox1.png",
+                "type": "image",
+                "key": "guideTxtbox1"
+            },
+            {
+                "url": "assets/img/interactive/guideTxtbox2.png",
+                "type": "image",
+                "key": "guideTxtbox2"
+            },
+            {
+                "url": "assets/img/interactive/guideTxtbox3.png",
+                "type": "image",
+                "key": "guideTxtbox3"
+            },
+            {
+                "url": "assets/img/interactive/guideTxtbox4.png",
+                "type": "image",
+                "key": "guideTxtbox4"
+            },
+            {
+                "url": "assets/img/click/Sweetie/I_big.png",
+                "type": "image",
+                "key": "I_big"
+            },
+            {
+                "url": "assets/img/click/Sweetie/I_small.png",
+                "type": "image",
+                "key": "I_small"
             },
             {
                 "url": [
@@ -61,9 +457,134 @@
                 "key": "in_game_play"
             },
             {
+                "url": "assets/img/click/Really/L_big.png",
+                "type": "image",
+                "key": "L_big"
+            },
+            {
+                "url": "assets/img/click/Really/L_small.png",
+                "type": "image",
+                "key": "L_small"
+            },
+            {
+                "url": "assets/img/click/Really/L2_big.png",
+                "type": "image",
+                "key": "L2_big"
+            },
+            {
+                "url": "assets/img/click/Really/L2_small.png",
+                "type": "image",
+                "key": "L2_small"
+            },
+            {
                 "url": "assets/font/luckiestguy.ttf",
                 "type": "binary",
                 "key": "luckiestguy"
+            },
+            {
+                "url": "assets/img/click/Tap/P_big.png",
+                "type": "image",
+                "key": "P_big"
+            },
+            {
+                "url": "assets/img/click/Tap/P_small.png",
+                "type": "image",
+                "key": "P_small"
+            },
+            {
+                "url": "assets/img/click/Really/questionmark_big.png",
+                "type": "image",
+                "key": "questionmark_big"
+            },
+            {
+                "url": "assets/img/click/Sweetie/questionmark_big.png",
+                "type": "image",
+                "key": "questionmark_big_1"
+            },
+            {
+                "url": "assets/img/click/Tap/questionmark_big.png",
+                "type": "image",
+                "key": "questionmark_big_2"
+            },
+            {
+                "url": "assets/img/click/Really/questionmark_small.png",
+                "type": "image",
+                "key": "questionmark_small"
+            },
+            {
+                "url": "assets/img/click/Sweetie/questionmark_small.png",
+                "type": "image",
+                "key": "questionmark_small_1"
+            },
+            {
+                "url": "assets/img/click/Tap/questionmark_small.png",
+                "type": "image",
+                "key": "questionmark_small_2"
+            },
+            {
+                "url": "assets/img/click/Really/R_big.png",
+                "type": "image",
+                "key": "R_big"
+            },
+            {
+                "url": "assets/img/click/Really/R_small.png",
+                "type": "image",
+                "key": "R_small"
+            },
+            {
+                "url": "assets/img/retry/retryCat.png",
+                "type": "image",
+                "key": "retryCat"
+            },
+            {
+                "url": "assets/img/retry/retryEfx.png",
+                "type": "image",
+                "key": "retryEfx"
+            },
+            {
+                "url": "assets/img/retry/retryFinger.png",
+                "type": "image",
+                "key": "retryFinger"
+            },
+            {
+                "url": "assets/img/retry/retryTxt.png",
+                "type": "image",
+                "key": "retryTxt"
+            },
+            {
+                "url": "assets/img/click/Sweetie/S_big.png",
+                "type": "image",
+                "key": "S_big"
+            },
+            {
+                "url": "assets/img/click/Sweetie/S_small.png",
+                "type": "image",
+                "key": "S_small"
+            },
+            {
+                "url": "assets/anim/SceneChange.json",
+                "type": "animation",
+                "key": "SceneChange"
+            },
+            {
+                "url": "assets/img/click/Sweetie/T_big.png",
+                "type": "image",
+                "key": "T_big"
+            },
+            {
+                "url": "assets/img/click/Tap/T_big.png",
+                "type": "image",
+                "key": "T_big_1"
+            },
+            {
+                "url": "assets/img/click/Sweetie/T_small.png",
+                "type": "image",
+                "key": "T_small"
+            },
+            {
+                "url": "assets/img/click/Tap/T_small.png",
+                "type": "image",
+                "key": "T_small_1"
             },
             {
                 "url": "assets/img/Temp_UI_Tutorial_cursor_01.png",
@@ -71,24 +592,39 @@
                 "key": "Temp_UI_Tutorial_cursor_01"
             },
             {
-                "url": "assets/img/interactive/stage1/txtbox.png",
+                "url": "assets/img/block/topHeart.png",
                 "type": "image",
-                "key": "txtbox"
+                "key": "topHeart"
             },
             {
-                "url": "assets/img/interactive/stage2/txtbox.png",
+                "url": "assets/img/block/topHelicopter.png",
                 "type": "image",
-                "key": "txtbox_1"
+                "key": "topHelicopter"
             },
             {
-                "url": "assets/img/interactive/stage3/txtbox.png",
+                "url": "assets/img/block/topStar.png",
                 "type": "image",
-                "key": "txtbox_2"
+                "key": "topStar"
             },
             {
-                "url": "assets/img/interactive/stage4/txtbox.png",
+                "url": "assets/img/click/Sweetie/W_big.png",
                 "type": "image",
-                "key": "txtbox_3"
+                "key": "W_big"
+            },
+            {
+                "url": "assets/img/click/Sweetie/W_small.png",
+                "type": "image",
+                "key": "W_small"
+            },
+            {
+                "url": "assets/img/click/Really/Y_big.png",
+                "type": "image",
+                "key": "Y_big"
+            },
+            {
+                "url": "assets/img/click/Really/Y_small.png",
+                "type": "image",
+                "key": "Y_small"
             }
         ]
     },
