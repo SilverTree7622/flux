@@ -440,6 +440,13 @@
                 "key": "guideTxtbox4"
             },
             {
+                "url": [
+                    "assets/audio/sfx/helicopter.mp3"
+                ],
+                "type": "audio",
+                "key": "helicopter"
+            },
+            {
                 "url": "assets/img/click/Sweetie/I_big.png",
                 "type": "image",
                 "key": "I_big"
