@@ -164,6 +164,16 @@
                 "key": "ending"
             },
             {
+                "url": "firstBackTile.png",
+                "type": "image",
+                "key": "firstBackTile"
+            },
+            {
+                "url": "firstChangedBackTile.png",
+                "type": "image",
+                "key": "firstChangedBackTile"
+            },
+            {
                 "url": "guideStaticBlocks1.png",
                 "type": "image",
                 "key": "guideStaticBlocks1"
@@ -209,6 +219,11 @@
                 ],
                 "type": "video",
                 "key": "in_game_play"
+            },
+            {
+                "url": "playNowBtn.png",
+                "type": "image",
+                "key": "playNowBtn"
             },
             {
                 "url": "really_A_big.png",
