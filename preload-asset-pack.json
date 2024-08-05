@@ -7,14 +7,14 @@
                 "key": "backTile"
             },
             {
-                "url": "backTileStage1.png",
-                "type": "image",
-                "key": "backTileStage1"
-            },
-            {
                 "url": "blockTile.png",
                 "type": "image",
                 "key": "blockTile"
+            },
+            {
+                "url": "changedBackTile.png",
+                "type": "image",
+                "key": "changedBackTile"
             },
             {
                 "url": "clickBackground.jpg",
