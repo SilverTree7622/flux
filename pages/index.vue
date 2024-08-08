@@ -1,8 +1,11 @@
 <template>
     <div>
-        wth
-        <NuxtRouteAnnouncer />
-        <NuxtWelcome />
+        <NuxtLayout name="tabcontent">
+            
+            index page
+            <NuxtWelcome />
+            <!-- <NuxtRouteAnnouncer /> -->
+        </NuxtLayout>
     </div>
 </template>
 

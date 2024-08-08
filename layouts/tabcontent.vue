@@ -1,6 +1,7 @@
 <template>
     <div>
-        
+        tabcontent
+        <slot />
     </div>
 </template>
 
