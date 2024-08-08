@@ -1,10 +1,18 @@
 {
-    "scripts": {
-        "predeploy": "npm run build",
-        "deploy": "gh-pages -d build"
-    },
-    "devDependencies": {
-        "gh-pages": "^6.1.1"
-    },
-    "homepage": "https://silvertree7622.github.io/fluxwork/"
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "dependencies": {
+    "nuxt": "^3.12.4",
+    "vue": "latest"
+  }
 }
