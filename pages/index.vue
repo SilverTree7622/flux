@@ -1,16 +1,14 @@
 <template>
     <div>
-        <NuxtLayout name="tabcontent">
-            
-            index page
-            <NuxtWelcome />
-            <!-- <NuxtRouteAnnouncer /> -->
-        </NuxtLayout>
     </div>
 </template>
 
 <script setup lang="ts">
 
+onMounted(async () => {
+    await nextTick();
+    navigateTo('/fluxwork');
+});
 </script>
 
 <style scoped>
