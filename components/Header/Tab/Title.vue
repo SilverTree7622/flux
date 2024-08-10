@@ -1,8 +1,8 @@
 <template>
     <NuxtLink
         :to="`/fluxwork?tab=${ props.tabIdx }`"
-        class="w-full text-center text-white rounded-t-md mx-[1px] mt-[1px] px-auto bg-slate-400"
-        :class="getClass(props.isToggled)"
+        class="w-full text-center rounded-t-md mx-[1px] mt-[1px] px-auto bg-slate-400"
+        :class="getClass()"
     >
         {{ props.context }}
     </NuxtLink>
@@ -14,10 +14,14 @@ const props = defineProps<{
     isToggled: boolean;
 }>();
 
-const getClass = (isToggled: boolean): string => {
-    return props.isToggled ? 'text-blue-700' : 'cursor-pointer';
+const getClass = (): string => {
+    return props.isToggled ? 'text-black' : 'text-white cursor-pointer';
 };
 
+onMounted(async () => {
+    await nextTick();
+    
+});
 </script>
 <style scoped>
     

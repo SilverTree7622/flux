@@ -6,11 +6,8 @@ export default defineNuxtConfig({
         '@pinia/nuxt',
         '@nuxtjs/tailwindcss',
     ],
-    // target: 'static',
-    // typescript: {
-    //     typeCheck: true,
-    //     tsConfig: {
-    //         "extends": "../../../tsconfig.base.json"
-    //     }
-    // },
+    
+    alias: {
+        "~": "/",
+    },
 });

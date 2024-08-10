@@ -23,6 +23,9 @@ const props = defineProps<{
     idx: number;
 }>();
 
+onMounted(async () => {
+    await nextTick();
+});
 </script>
 
 <style scoped>

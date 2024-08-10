@@ -1,11 +1,12 @@
 <template>
-    <div>
+    <div class="w-full h-full">
         <NuxtLayout 
             name="tabcontent"
             :tabIdx="opt.tabIdx"
         >
-            <NuxtWelcome v-if="opt.tabIdx === 0" />
-            <NuxtRouteAnnouncer v-if="opt.tabIdx === 1" />
+            <ContentWebsite v-if="opt.tabIdx === 0" />
+            <ContentWebGame v-if="opt.tabIdx === 1" />
+            <ContentPlayableAD v-if="opt.tabIdx === 2" />
             <FooterInfo v-if="opt.isMyInfoExist" />
         </NuxtLayout>
     </div>
@@ -15,7 +16,7 @@
 const route = useRoute();
 const opt = reactive({
     tabIdx: <number> Number(route.query['tab'] ?? 0),
-    isMyInfoExist: <boolean> !!(route.query['info'] ?? true),
+    isMyInfoExist: <boolean> !!(route.query['info'] ?? false),
 });
 
 watch(
