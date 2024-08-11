@@ -1,20 +1,24 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+// import { defineNuxtConfig } from 'nuxt/config'
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  target: 'static',
-  ssr: false,
+  // target: 'static',
+	ssr: false,
+	components: true,
 
-  
-  setup () {
-    useMeta({
-      meta: [
-        { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1' }
-      ],
-      bodyAttrs: {
-        class: 'w-full h-full'
-      }
-    })
+	postcss: {
+		plugins: {
+			tailwindcss: {},
+			autoprefixer: {},
+		},
+	},
+  nitro : {
+   preset : 'github-pages' 
   },
+  // app : {
+  //  baseURL : 'https://silvertree7622.github.io/' 
+  // },
+  
   modules: [
       '@pinia/nuxt',
       '@nuxtjs/tailwindcss',

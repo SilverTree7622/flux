@@ -1,6 +1,6 @@
 <template>
     <NuxtLink
-        :to="`/fluxwork?tab=${ props.tabIdx }`"
+        :to="`/showcase?tab=${ props.tabIdx }`"
         class="w-full text-center rounded-t-md mx-[1px] mt-[1px] px-auto bg-slate-400"
         :class="getClass()"
     >

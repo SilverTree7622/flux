@@ -1,5 +1,6 @@
 <template>
     <div>
+        index page
     </div>
 </template>
 
@@ -7,7 +8,7 @@
 
 onMounted(async () => {
     await nextTick();
-    navigateTo('/fluxwork');
+    navigateTo('/showcase');
 });
 </script>
 
