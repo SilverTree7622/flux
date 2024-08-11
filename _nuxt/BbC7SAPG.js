@@ -1,1 +1,0 @@
-import{n as e,s as a,v as n,z as o,c as s,o as t}from"./Cc_cu6qk.js";const _=e({__name:"index",setup(c){return a(async()=>{await n(),o("/showcase")}),(i,r)=>(t(),s("div",null," index page "))}});export{_ as default};
