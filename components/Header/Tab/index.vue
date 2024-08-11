@@ -15,6 +15,11 @@
             :context="'playable ad'"
             :isToggled="props.idx === 2"
         />
+        <HeaderTabTitle
+            :tabIdx="3"
+            :context="'etc'"
+            :isToggled="props.idx === 3"
+        />
     </div>
 </template>
 

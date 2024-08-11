@@ -4,7 +4,7 @@
     </div>
 </template>
 <script setup lang="ts">
-import type { TContentItem } from '~/types/content';
+import type { TContentItem } from '@/types/content';
 
 const props = defineProps<{
     list: TContentItem[];

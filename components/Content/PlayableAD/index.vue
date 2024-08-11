@@ -1,10 +1,16 @@
 <template>
-    <div v-for="(item, idx) in props.list">
+    <div
+        v-for="(item, idx) in props.list"
+        class="
+            w-full px-auto mx-auto justify-center items-center
+            grid grid-cols-3 gap-4
+        "
+    >
         <ContentItem :item="item" />
     </div>
 </template>
 <script setup lang="ts">
-import type { TContentItem } from '~/types/content';
+import type { TContentItem } from '@/types/content';
 
 const props = defineProps<{
     list: TContentItem[];

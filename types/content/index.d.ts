@@ -2,5 +2,7 @@
 export type TContentItem = {
     thumbnail: string;
     title: string;
-    type?: 'file' | 'link';
+    type?: 'website' | 'webgame' | 'playablead';
+    contentType?: 'file' | 'link';
+    link?: string;
 };

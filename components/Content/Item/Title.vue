@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="font-extrabold text-center">
         {{ props.txt }}
     </div>
 </template>

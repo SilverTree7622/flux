@@ -1,7 +1,7 @@
 <template>
     <div class="w-full h-full">
-        <div class="mt-1"></div>
-        <HeaderTop />
+        <div v-if="!props.isNoTop" class="mt-1"></div>
+        <HeaderTop v-if="!props.isNoTop" />
         <div class="my-4"></div>
         <HeaderTab :idx="props.tabIdx" />
         <div class="w-full h-full bg-slate-400">
@@ -13,6 +13,7 @@
 <script setup lang="ts">
 const props = defineProps<{
     tabIdx: number;
+    isNoTop?: boolean;
 }>();
 </script>
 <style scoped>
