@@ -37,7 +37,7 @@ const list = reactive({
     webgame: <TContentItem[]> [],
     playablead: <TContentItem[]> [
         {
-            thumbnail: '/logo/playablead/sweetopia.png',
+            thumbnail: 'logo/playablead/sweetopia.png',
             title: 'SWEETOPIA',
             type: 'playablead',
             contentType: 'file'

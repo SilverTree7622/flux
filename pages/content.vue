@@ -53,7 +53,7 @@ const opt = reactive({
 const $frame = ref();
 
 const getFullSrc = () => {
-    return `/${ getType() }/${ opt.url.toLowerCase() }/index.html`;
+    return `${ getType() }/${ opt.url.toLowerCase() }/index.html`;
 };
 
 const clickExternal = () => {
