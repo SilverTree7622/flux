@@ -2,26 +2,27 @@
 // import { defineNuxtConfig } from 'nuxt/config'
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  // target: 'static',
-	ssr: false,
-	components: true,
-
-	postcss: {
-		plugins: {
-			tailwindcss: {},
-			autoprefixer: {},
-		},
-	},
-  nitro : {
-   preset : 'github-pages' 
+  // ssr: false,
+  components: true,
+  nitro: {
+    preset: 'github-pages'
   },
-  // app : {
-  //  baseURL : 'https://silvertree7622.github.io/' 
-  // },
-  
+  app: {
+    head: {
+      title: 'flux dev site',
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { hid: 'description', name: 'description', content: 'flux hunter\' personal website!' },
+        { name: 'format-detection', content: 'telephone=no' }
+      ],
+    },
+    baseURL: '/flux/',
+  },
+
   modules: [
-      '@pinia/nuxt',
-      '@nuxtjs/tailwindcss',
+    '@pinia/nuxt',
+    '@nuxtjs/tailwindcss',
   ],
 
   compatibilityDate: '2024-08-11',
