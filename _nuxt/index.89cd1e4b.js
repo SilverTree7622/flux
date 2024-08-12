@@ -1,1 +1,0 @@
-import{a as e,f as a,h as n,m as o,j as t,o as s}from"./entry.5327fab5.js";const _=e({__name:"index",setup(c){return a(async()=>{await n(),o("/showcase")}),(i,r)=>(s(),t("div",null," index page "))}});export{_ as default};
