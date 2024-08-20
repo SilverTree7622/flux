@@ -22,7 +22,11 @@
                 :list="list.etc"
             />
             <div class="py-2"></div>
-            <NuxtLayout name="template" :tabIdx="opt.tabIdx" :isExist="template.isExist">
+            <NuxtLayout
+                name="template"
+                :tabIdx="opt.tabIdx"
+                :isExist="template.isExist"
+            >
                 <ContentWebsite
                     v-if="opt.tabIdx === 0"
                     :list="template.website"
