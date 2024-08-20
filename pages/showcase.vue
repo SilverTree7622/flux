@@ -22,7 +22,7 @@
                 :list="list.etc"
             />
             <div class="py-2"></div>
-            <FooterTemplate :tabIdx="opt.tabIdx">
+            <NuxtLayout name="template" :tabIdx="opt.tabIdx" :isExist="template.isExist">
                 <ContentWebsite
                     v-if="opt.tabIdx === 0"
                     :list="template.website"
@@ -39,7 +39,7 @@
                     v-if="opt.tabIdx === 3"
                     :list="template.etc"
                 />
-            </FooterTemplate>
+            </NuxtLayout>
             <FooterInfo v-if="opt.isMyInfoExist" />
         </NuxtLayout>
     </div>
@@ -55,6 +55,7 @@ const opt = reactive({
 });
 
 const list = reactive({
+    isExist: <boolean> false,
     website: <TContentItem[]> [],
     webgame: <TContentItem[]> [],
     playablead: <TContentItem[]> [
@@ -69,6 +70,7 @@ const list = reactive({
 });
 
 const template = reactive({
+    isExist: <boolean> false,
     website: <TContentItem[]> [],
     webgame: <TContentItem[]> [],
     playablead: <TContentItem[]> [],
@@ -79,12 +81,46 @@ watch(
     () => route.query['tab'],
     async (p) => {
         opt.tabIdx = Number(p);
+        chckContentIsExist();
+        chckTemplateIsExist();
     }
 );
 
+const chckContentIsExist = () => {
+    if (opt.tabIdx === 0) {
+        return list.isExist = !!list.website.length;
+    }
+    if (opt.tabIdx === 1) {
+        return list.isExist = !!list.webgame.length;
+    }
+    if (opt.tabIdx === 2) {
+        return list.isExist = !!list.playablead.length;
+    }
+    if (opt.tabIdx === 3) {
+        return list.isExist = !!list.etc.length;
+    }
+    list.isExist = false;
+};
+
+const chckTemplateIsExist = () => {
+    if (opt.tabIdx === 0) {
+        return template.isExist = !!template.website.length;
+    }
+    if (opt.tabIdx === 1) {
+        return template.isExist = !!template.webgame.length;
+    }
+    if (opt.tabIdx === 2) {
+        return template.isExist = !!template.playablead.length;
+    }
+    if (opt.tabIdx === 3) {
+        return template.isExist = !!template.etc.length;
+    }
+    template.isExist = false;
+};
+
 onMounted(async () => {
     await nextTick();
-    
+    chckTemplateIsExist();
 });
 </script>
 
