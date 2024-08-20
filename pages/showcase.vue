@@ -17,7 +17,29 @@
                 v-if="opt.tabIdx === 2"
                 :list="list.playablead"
             />
+            <ContentEtc
+                v-if="opt.tabIdx === 3"
+                :list="list.etc"
+            />
             <div class="py-2"></div>
+            <FooterTemplate :tabIdx="opt.tabIdx">
+                <ContentWebsite
+                    v-if="opt.tabIdx === 0"
+                    :list="template.website"
+                />
+                <ContentWebGame
+                    v-if="opt.tabIdx === 1"
+                    :list="template.webgame"
+                />
+                <ContentPlayableAD
+                    v-if="opt.tabIdx === 2"
+                    :list="template.playablead"
+                />
+                <ContentEtc
+                    v-if="opt.tabIdx === 3"
+                    :list="template.etc"
+                />
+            </FooterTemplate>
             <FooterInfo v-if="opt.isMyInfoExist" />
         </NuxtLayout>
     </div>
@@ -43,6 +65,14 @@ const list = reactive({
             contentType: 'file'
         }
     ],
+    etc: <TContentItem[]> [],
+});
+
+const template = reactive({
+    website: <TContentItem[]> [],
+    webgame: <TContentItem[]> [],
+    playablead: <TContentItem[]> [],
+    etc: <TContentItem[]> [],
 });
 
 watch(

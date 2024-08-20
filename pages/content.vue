@@ -21,9 +21,8 @@
         <div class="py-2"></div>
     </NuxtLayout>
 </template>
-<script setup lang="ts">
-import { onBeforeUnmount } from 'vue';
 
+<script setup lang="ts">
 const route = useRoute();
 
 const getType = () => {

@@ -4,7 +4,7 @@
         <HeaderTop v-if="!props.isNoTop" />
         <div class="my-4"></div>
         <HeaderTab :idx="props.tabIdx" />
-        <div class="w-full h-full bg-slate-400">
+        <div class="w-full h-full bg-slate-400 rounded-b-md">
             <slot />
         </div>
     </div>
