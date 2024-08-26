@@ -15,7 +15,7 @@
             v-if="getType() !== 'external'"
             ref="$frame"
             class="w-full p-auto overflow-hidden"
-            :src="getFullSrc()"
+            :src="opt.fullSrc"
         >
         </iframe>
         <div class="py-2"></div>
@@ -47,13 +47,10 @@ const opt = reactive({
     contentType: <string> getContentType(),
     url: <string> getName(),
     link: <string> getLink(),
+    fullSrc: <string> '',
 });
 
 const $frame = ref();
-
-const getFullSrc = () => {
-    return `${ getType() }/${ opt.url.toLowerCase() }/index.html`;
-};
 
 const clickExternal = () => {
     navigateTo(
@@ -65,6 +62,13 @@ const clickExternal = () => {
             },
         }
     );
+};
+
+const getFullSrc = () => {
+    const src = `${ getType() }/${ opt.url.toLowerCase() }/index.html`;
+    console.log('src: ', src);
+
+    return `${ getType() }/${ opt.url.toLowerCase() }/index.html`;
 };
 
 onMounted(async () => {
@@ -84,6 +88,11 @@ onMounted(async () => {
     if (getType() === 'external') {
 
     }
+    opt.type = getType();
+    opt.contentType = getContentType();
+    opt.url = getName();
+    opt.link = getLink();
+    opt.fullSrc = getFullSrc();
     opt.isPending = false;
 });
 
