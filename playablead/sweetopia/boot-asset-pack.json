@@ -1,0 +1,22 @@
+{
+    "section1": {
+        "files": [
+            {
+                "url": "loadingBackground.jpg",
+                "type": "image",
+                "key": "loadingBackground"
+            },
+            {
+                "url": "loadingPageIconTxt.png",
+                "type": "image",
+                "key": "loadingPageIconTxt"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "version": 2,
+        "showAllFilesInBlocks": false
+    }
+}
