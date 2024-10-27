@@ -82,6 +82,25 @@ const listOpt = reactive({
             customTitle: '테니스',
             contentType: 'file'
         },
+        {
+            title: 'BOXJENGA',
+            customTitle: '박스젠가',
+            contentType: 'file'
+        },
+        {
+            title: 'PUZZLEGOLF',
+            customTitle: '골프퍼즐',
+            contentType: 'file'
+        },
+        {
+            title: 'PUZZLETOWERBOOM',
+            customTitle: '타워폭파퍼즐',
+            contentType: 'file'
+        },
+        {
+            title: 'SQUARELANDING',
+            contentType: 'file'
+        },
     ],
     webgameProdList: <TContentItem[]>[],
     playableadSampleList: <TContentItem[]>[],

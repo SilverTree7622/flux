@@ -1,8 +1,4 @@
 <template>
-    <div>
-
-        
-    </div>
     <div 
         class="
             w-full px-auto mx-auto justify-center items-center
