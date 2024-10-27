@@ -1,0 +1,23 @@
+{
+  "title": "Cities",
+  "description": "Find the words related to Cities",
+  "icon": "Cities.png",
+  "locked": false,
+  "chapters": [
+    ["Dublin", "London", "Paris", "Tokyo"],
+    ["Rome", "Berlin", "Sydney", "Moscow"],
+    ["Beijing", "Dubai", "Rio", "Toronto"],
+    ["Cairo", "Singapore", "Amsterdam"],
+    ["Bangkok", "Barcelona", "Mumbai"],
+    ["Venice", "Vienna", "Athens", "Seoul"],
+    ["Rome", "Seoul", "Lisbon"],
+    ["Dublin", "Bali",  "Prague"],
+    ["Warsaw", "Zurich", "Jakarta"],
+    ["Helsinki", "Osaka", "Montreal"],
+    ["Ankara",  "Madrid", "Perth"],
+    ["Bali", "Manila", "Kyoto", "Washington"],
+    ["Kyoto", "Dhaka", "Havana"],
+    ["Havana", "Lima", "Munich"],
+    ["Munich", "Lima", "Havana"]
+  ]
+}

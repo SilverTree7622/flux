@@ -1,0 +1,25 @@
+{
+  "title": "Aircraft",
+  "description": "Find the words related to Aircraft",
+  "icon": "Aircraft.png",
+  "locked": false,
+  "chapters": [
+    ["Jet", "Wing", "Tail"],
+    ["Pilot", "Cabin", "Runway", "Hangar"],
+    ["Cockpit", "Turbine", "Compass"],
+    ["Landing", "Takeoff", "Rudder"],
+    ["Aircraft", "Airliner", "Glider"],
+    ["Airspace", "Autopilot"],
+    ["Flight", "Radar", "Rotor"],
+    ["Engine", "Flaps", "Gear"],
+    ["Terminal", "Yaw", "Lifter"],
+    ["Cessna", "Fighter", "Airship"],
+    ["Copilot", "Compass", "Mechanic"],
+    ["Airfield", "Airmail", "Chopper"],
+    ["Flap", "Gust", "Hover", "Jetway"],
+    ["Radar", "Runway", "Copilot"],
+    ["Balloon", "Compass"],
+    ["Propeller", "Blackbox", "Copilot"],
+    ["Airway", "Balloon", "Airbus"]
+  ]
+}

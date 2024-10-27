@@ -1,0 +1,18 @@
+{
+  "title": "Colors",
+  "description": "Find the words related to Color",
+  "icon": "Colors.png",
+  "locked": false,
+  "chapters": [
+    ["Red", "Blue", "Green"],
+    ["Orange", "Purple", "Pink", "Black"],
+    ["White", "Brown", "Gray", "Gold"],
+    ["Silver", "Purple", "Indigo"],
+    ["Cyan", "Blue", "Orange"],
+    ["Emerald", "Amber", "Coral", "Ruby"],
+    ["Lime", "Black", "Mint", "Peach"],
+    ["Lavender", "Maroon", "Teal", "Olive"],
+    ["Brown", "Yellow", "Navy", "Ivory"],
+    [ "Bronze", "Red", "Mustard"]
+  ]
+}

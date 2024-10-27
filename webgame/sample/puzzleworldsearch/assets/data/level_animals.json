@@ -1,0 +1,24 @@
+{
+  "title": "Animals",
+  "description": "Find the words related to Animals",
+  "icon": "Animals.png",
+  "locked": false,
+  "chapters": [
+    ["Eel", "Lion", "Tiger", "Monkey"],
+    ["Kangaroo", "Zebra", "Koala", "Panda"],
+    ["Gorilla", "Rhino", "Leopard", "Cheetah"],
+    ["Penguin", "Koala", "Swan", "Panda"],
+    ["Elephant", "Lion", "Tiger", "Monkey"],
+    ["Zebra", "Koala", "Panda", "Rhino"],
+    ["Eel", "Duck", "Lizard", "Penguin"],
+    ["Koala", "Dog", "Panda", "Giraffe"],
+    ["Elephant", "Lion", "Tiger", "Bee"],
+    ["Kangaroo", "Zebra", "Koala", "Panda"],
+    ["Gorilla", "Rhino", "Leopard", "Bee"],
+    ["Penguin", "Koala", "Kangaroo", "Panda"],
+    ["Giraffe", "Bee", "Lion", "Tiger", "Monkey"],
+    ["Zebra", "Koala", "Panda", "Gorilla", "Rhino"],
+    ["Leopard", "Cheetah", "Panda"],
+    ["Koala", "Dog", "Trout"]
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "title": "Flowers",
+  "description": "Find the words related to Plants",
+  "icon": "Flowers.png",
+  "locked": false,
+  "chapters": [
+    ["Rose", "Tulip", "Lily", "Daisy"],
+    ["Oak", "Pine", "Maple", "Birch"],
+    ["Cactus", "Fern", "Bamboo", "Ivy"],
+    ["Moss", "Grass", "Bush", "Shrub"],
+    ["Palm", "Vine", "Clover", "Poppy"],
+    ["Orchid", "Poppy", "Lily", "Daffodil"],
+    ["Aloe", "Rose", "Mint", "Basil"],
+    ["Dahlia", "Fungi", "Berry", "Lichen"],
+    ["Willow", "Sequoia", "Marigold"],
+    ["Holly", "Yew", "Juniper", "Daisy"]
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "title": "Tools",
+  "description": "Find the words related to Tools",
+  "icon": "Tools.png",
+  "locked": false,
+  "chapters": [
+    ["Hammer", "Bolt", "Wrench"],
+    ["Saw", "Drill", "Chisel", "Level"],
+    ["Drill", "Saw", "Ladder", "Clamp"],
+    ["File", "Mallet", "Pliers"],
+    ["Shovel", "Rake", "Hoe", "Axe"],
+    ["Drill", "Crowbar", "Knife"],
+    ["Key", "Tape", "Pipe", "Iron"],
+    ["Clamp", "Roller", "Trowel", "Knife"],
+    ["Nut", "Shovel", "Gloves"],
+    ["Bolt", "Chisel", "Wire"]
+  ]
+}

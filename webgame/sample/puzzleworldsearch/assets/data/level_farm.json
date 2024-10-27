@@ -1,0 +1,31 @@
+{
+  "title": "Farm",
+  "description": "Find the words related to Farm",
+  "icon": "Farm.png",
+  "locked": false,
+  "chapters": [
+    ["Cow", "Sheep", "Pig", "Chicken"],
+    ["Horse", "Goat", "Duck"],
+    ["Barn", "Hay", "Corn", "Wheat"],
+    ["Egg", "Milk", "Wheat"],
+    ["Rooster", "Pond", "Fence"],
+    ["Harvest", "Bale", "Crop"],
+    ["Horse", "Rabbit", "Stable"],
+    ["Calf", "Plow", "Hive", "Silo"],
+    ["Shear", "Chicken", "Cabbage"],
+    ["Grain","Garden", "Seed"],
+    ["Apple", "Banana", "Cake", "Jam"],
+    ["Kiwi", "Lime", "Mango"],
+    ["Donut", "Egg", "Fish", "Honey"],
+    ["Pizza", "Rice", "Tomato"],
+    ["Bread", "Butter", "Cheese"],
+    ["Garlic", "Jelly", "Ketchup"],
+    ["Milk", "Nuts", "Olive", "Pasta"],
+    ["Strawberry", "Watermelon", "Carrot"],
+    ["Cucumber", "Eggplant", "Lettuce"],
+    ["Onion", "Pepper", "Potato"],
+    ["Tomato", "Pumpkin", "Radish"],
+    [ "Carrot", "Celery", "Corn"],
+    [ "Peach", "Cow", "Bee"]
+  ]
+}
