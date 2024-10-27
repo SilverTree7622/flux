@@ -2,15 +2,18 @@
     <div class="w-full h-full">
         <NuxtLayout name="tabcontent" :tabIdx="opt.tabIdx" :subIdx="opt.subIdx">
             <div class="py-2"></div>
-            <ContentWebsite v-if="opt.tabIdx === 0 && opt.subIdx === 0" :type="'website'" :subIdx="opt.subIdx" :list="listOpt.websiteSampleList" />
-            <ContentWebsite v-if="opt.tabIdx === 0 && opt.subIdx === 1" :type="'website'" :subIdx="opt.subIdx" :list="listOpt.websiteProdList" />
-            <ContentWebGame v-if="opt.tabIdx === 1 && opt.subIdx === 0" :type="'webgame'" :subIdx="opt.subIdx" :list="listOpt.webgameSampleList" />
-            <ContentWebGame v-if="opt.tabIdx === 1 && opt.subIdx === 1" :type="'webgame'" :subIdx="opt.subIdx" :list="listOpt.webgameProdList" />
-            <ContentPlayableAD v-if="opt.tabIdx === 2 && opt.subIdx === 0" :type="'playablead'" :subIdx="opt.subIdx" :list="listOpt.playableadSampleList" />
-            <ContentPlayableAD v-if="opt.tabIdx === 2 && opt.subIdx === 1" :type="'playablead'" :subIdx="opt.subIdx" :list="listOpt.playableadProdList" />
-            <ContentEtc v-if="opt.tabIdx === 3 && opt.subIdx === 0" :type="'etc'" :subIdx="opt.subIdx" :list="listOpt.etcSampleList" />
-            <ContentEtc v-if="opt.tabIdx === 3 && opt.subIdx === 1" :type="'etc'" :subIdx="opt.subIdx" :list="listOpt.etcProdList" />
-            <ContentEmpty v-show="!listOpt.isExist" :context="getContext()" :type="opt.subIdx === 0 ? 'sample' : 'production'" />
+            <ContentPending v-if="opt.isPending" />
+            <template v-else>
+                <ContentWebsite v-if="opt.tabIdx === 0 && opt.subIdx === 0" :type="'website'" :subIdx="opt.subIdx" :list="listOpt.websiteSampleList" />
+                <ContentWebsite v-if="opt.tabIdx === 0 && opt.subIdx === 1" :type="'website'" :subIdx="opt.subIdx" :list="listOpt.websiteProdList" />
+                <ContentWebGame v-if="opt.tabIdx === 1 && opt.subIdx === 0" :type="'webgame'" :subIdx="opt.subIdx" :list="listOpt.webgameSampleList" />
+                <ContentWebGame v-if="opt.tabIdx === 1 && opt.subIdx === 1" :type="'webgame'" :subIdx="opt.subIdx" :list="listOpt.webgameProdList" />
+                <ContentPlayableAD v-if="opt.tabIdx === 2 && opt.subIdx === 0" :type="'playablead'" :subIdx="opt.subIdx" :list="listOpt.playableadSampleList" />
+                <ContentPlayableAD v-if="opt.tabIdx === 2 && opt.subIdx === 1" :type="'playablead'" :subIdx="opt.subIdx" :list="listOpt.playableadProdList" />
+                <ContentEtc v-if="opt.tabIdx === 3 && opt.subIdx === 0" :type="'etc'" :subIdx="opt.subIdx" :list="listOpt.etcSampleList" />
+                <ContentEtc v-if="opt.tabIdx === 3 && opt.subIdx === 1" :type="'etc'" :subIdx="opt.subIdx" :list="listOpt.etcProdList" />
+                <ContentEmpty v-show="!listOpt.isExist" :context="getContext()" :type="opt.subIdx === 0 ? 'sample' : 'production'" />
+            </template>
             <div class="py-2"></div>
             <FooterInfo v-if="opt.isMyInfoExist" />
         </NuxtLayout>
@@ -23,6 +26,7 @@ import type { TContentItem } from '@/types/content';
 const route = useRoute();
 
 const opt = reactive({
+    isPending: <boolean> false,
     tabIdx: <number>Number(route.query['tab'] ?? 0),
     subIdx: <number>Number(route.query['sub'] ?? 0),
     isMyInfoExist: <boolean>!!(route.query['info'] ?? false),
@@ -34,8 +38,43 @@ const listOpt = reactive({
     websiteProdList: <TContentItem[]>[],
     webgameSampleList: <TContentItem[]>[
         {
-            // thumbnail: 'logo/playablead/sweetopia.png',
+            title: 'BRICKBREAKER',
+            contentType: 'file'
+        },
+        {
+            title: 'COLORBUMP',
+            contentType: 'file'
+        },
+        {
+            title: 'KNIFESHOT',
+            contentType: 'file'
+        },
+        {
+            title: 'MATCH3BLOSSOM',
+            contentType: 'file'
+        },
+        {
+            title: 'PUZZLE2048',
+            contentType: 'file'
+        },
+        {
+            title: 'PUZZLESHAPEBALANCE',
+            contentType: 'file'
+        },
+        {
+            title: 'PUZZLETETRISBLOCK',
+            contentType: 'file'
+        },
+        {
+            title: 'PUZZLEWORLDSEARCH',
+            contentType: 'file'
+        },
+        {
             title: 'SWEETMERGE',
+            contentType: 'file'
+        },
+        {
+            title: 'SWIPETENNIS',
             contentType: 'file'
         },
     ],
@@ -55,16 +94,20 @@ const listOpt = reactive({
 watch(
     () => route.query['tab'],
     async (p) => {
+        opt.isPending = true;
         opt.tabIdx = Number(p);
         chckContentIsExist();
+        opt.isPending = false;
     }
 );
 
 watch(
     () => route.query['sub'],
     async (p) => {
+        opt.isPending = true;
         opt.subIdx = Number(p);
         chckContentIsExist();
+        opt.isPending = false;
     },
 );
 
@@ -98,8 +141,10 @@ const getContext = (): string => {
 };
 
 onMounted(async () => {
+    opt.isPending = true;
     await nextTick();
     chckContentIsExist();
+    opt.isPending = false;
 });
 </script>
 

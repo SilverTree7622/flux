@@ -1,12 +1,15 @@
 <template>
+    <div>
+
+        
+    </div>
     <div 
-        v-for="(item, idx) in props.list"
         class="
             w-full px-auto mx-auto justify-center items-center
             grid grid-cols-3 gap-4
         "
     >
-        <ContentItem :type="props.type" :subIdx="props.subIdx" :item="item" />
+        <ContentItem v-for="(item, idx) in props.list" :key="idx" :type="props.type" :subIdx="props.subIdx" :item="item" />
     </div>
 </template>
 <script setup lang="ts">

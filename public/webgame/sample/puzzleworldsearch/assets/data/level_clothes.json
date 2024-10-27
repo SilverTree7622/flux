@@ -1,0 +1,21 @@
+{
+  "title": "Clothes",
+  "description": "Find the words related to Clothes",
+  "icon": "Clothes.png",
+  "locked": false,
+  "chapters": [
+    ["Shirt", "Pants", "Skirt"],
+    ["Jeans", "Sweater", "Blouse", "Jacket"],
+    ["Coat", "Shirt", "Sock", "Shoes"],
+    ["Hat", "Scarf", "Gloves", "Boots"],
+    ["Sandal", "Sneakers", "Belt", "Tie"],
+    ["Pajama", "Swimsuit", "Raincoat", "Cap"],
+    ["Hoodie", "Shorts", "Tops"],
+    ["Cardigan", "Overalls", "Kimono", "Tights"],
+    ["Vest", "Poncho", "Windbreaker", "Beanie"],
+    ["Leggings", "Bikini", "Sweatshirt"],
+    [ "Blazer", "Polo", "Cape"],
+    [ "Coat", "Parka", "Poncho"],
+    ["Tunic", "Jersey", "Jumpsuit", "Poncho"]
+  ]
+}

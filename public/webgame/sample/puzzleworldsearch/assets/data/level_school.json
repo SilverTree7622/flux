@@ -1,0 +1,18 @@
+{
+  "title": "School",
+  "description": "Find the words related to School",
+  "icon": "SchoolSupplies.png",
+  "locked": false,
+  "chapters": [
+    ["Teacher", "Student", "Class", "Desk"],
+    ["Book", "Notebook", "Pencil", "Eraser"],
+    ["Blackboard", "Chalk", "Ruler"],
+    ["Homework", "Test", "Quiz", "Project"],
+    ["Library", "Computer", "Lab", "Gym"],
+    ["Recess", "Lunch", "Playground", "Bus"],
+    ["Principal", "School", "Uniform"],
+    ["Math", "Science", "History", "Art"],
+    ["Music", "Sports", "Reading", "Writing"],
+    ["Backpack", "Folder", "Paper"]
+  ]
+}
