@@ -59,22 +59,27 @@ const listOpt = reactive({
         },
         {
             title: 'PUZZLESHAPEBALANCE',
+            customTitle: '균형맞추기',
             contentType: 'file'
         },
         {
             title: 'PUZZLETETRISBLOCK',
+            customTitle: '테트리스Blast',
             contentType: 'file'
         },
         {
             title: 'PUZZLEWORLDSEARCH',
+            customTitle: '낱말찾기',
             contentType: 'file'
         },
         {
             title: 'SWEETMERGE',
+            customTitle: '수박게임',
             contentType: 'file'
         },
         {
             title: 'SWIPETENNIS',
+            customTitle: '테니스',
             contentType: 'file'
         },
     ],

@@ -5,7 +5,7 @@
     >
         <ContentItemThumbnail :src="props.item.thumbnail || 'BlackLogo.jpg'" />
         <div :class="`my-2`"></div>
-        <ContentItemTitle :txt="props.item.title" />
+        <ContentItemTitle :txt="props.item.customTitle ?? props.item.title" />
     </div>
 </template>
 <script setup lang="ts">
