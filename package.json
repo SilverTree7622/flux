@@ -10,7 +10,8 @@
     "postinstall": "npx nuxt prepare",
     "predeploy": "npm run generate",
     "homepage": "https://silvertree7622.github.io/flux/",
-    "deploy": "gh-pages --dotfiles -d .output/public"
+    "page": "gh-pages --dotfiles -d .output/public",
+    "deploy": "npm run predeploy && npm run page"
   },
   "dependencies": {
     "@pinia/nuxt": "^0.5.3",
