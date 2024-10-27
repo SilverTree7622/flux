@@ -29,6 +29,10 @@ const getType = () => {
     return route.query['type'] as string ?? 'website';
 };
 
+const getSubType = () => {
+    return route.query['sub'] as string ?? '';
+};
+
 const getContentType = () => {
     return route.query['contenttype'] as string ?? 'file';
 };
@@ -44,6 +48,7 @@ const getLink = () => {
 const opt = reactive({
     isPending: <boolean> true,
     type: <string> getType(),
+    sub: <string> getSubType(),
     contentType: <string> getContentType(),
     url: <string> getName(),
     link: <string> getLink(),
@@ -65,10 +70,9 @@ const clickExternal = () => {
 };
 
 const getFullSrc = () => {
-    const src = `${ getType() }/${ opt.url.toLowerCase() }/index.html`;
+    const src = `${ opt.type }/${ opt.sub }/${ opt.url.toLowerCase() }/index.html`;
     console.log('src: ', src);
-
-    return `${ getType() }/${ opt.url.toLowerCase() }/index.html`;
+    return src;
 };
 
 onMounted(async () => {
@@ -89,6 +93,7 @@ onMounted(async () => {
 
     }
     opt.type = getType();
+    opt.sub = getSubType();
     opt.contentType = getContentType();
     opt.url = getName();
     opt.link = getLink();

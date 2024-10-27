@@ -1,18 +1,17 @@
 <template>
     <div class="w-full h-full">
-        <NuxtLayout name="tabcontent" :tabIdx="opt.tabIdx">
+        <NuxtLayout name="tabcontent" :tabIdx="opt.tabIdx" :subIdx="opt.subIdx">
             <div class="py-2"></div>
-            <ContentWebsite v-if="opt.tabIdx === 0" :list="list.website" />
-            <ContentWebGame v-if="opt.tabIdx === 1" :list="list.webgame" />
-            <ContentPlayableAD v-if="opt.tabIdx === 2" :list="list.playablead" />
-            <ContentEtc v-if="opt.tabIdx === 3" :list="list.etc" />
+            <ContentWebsite v-if="opt.tabIdx === 0 && opt.subIdx === 0" :type="'website'" :subIdx="opt.subIdx" :list="listOpt.websiteSampleList" />
+            <ContentWebsite v-if="opt.tabIdx === 0 && opt.subIdx === 1" :type="'website'" :subIdx="opt.subIdx" :list="listOpt.websiteProdList" />
+            <ContentWebGame v-if="opt.tabIdx === 1 && opt.subIdx === 0" :type="'webgame'" :subIdx="opt.subIdx" :list="listOpt.webgameSampleList" />
+            <ContentWebGame v-if="opt.tabIdx === 1 && opt.subIdx === 1" :type="'webgame'" :subIdx="opt.subIdx" :list="listOpt.webgameProdList" />
+            <ContentPlayableAD v-if="opt.tabIdx === 2 && opt.subIdx === 0" :type="'playablead'" :subIdx="opt.subIdx" :list="listOpt.playableadSampleList" />
+            <ContentPlayableAD v-if="opt.tabIdx === 2 && opt.subIdx === 1" :type="'playablead'" :subIdx="opt.subIdx" :list="listOpt.playableadProdList" />
+            <ContentEtc v-if="opt.tabIdx === 3 && opt.subIdx === 0" :type="'etc'" :subIdx="opt.subIdx" :list="listOpt.etcSampleList" />
+            <ContentEtc v-if="opt.tabIdx === 3 && opt.subIdx === 1" :type="'etc'" :subIdx="opt.subIdx" :list="listOpt.etcProdList" />
+            <ContentEmpty v-show="!listOpt.isExist" :context="getContext()" :type="opt.subIdx === 0 ? 'sample' : 'production'" />
             <div class="py-2"></div>
-            <NuxtLayout name="template" :tabIdx="opt.tabIdx" :isExist="template.isExist">
-                <ContentWebsite v-if="opt.tabIdx === 0" :list="template.website" />
-                <ContentWebGame v-if="opt.tabIdx === 1" :list="template.webgame" />
-                <ContentPlayableAD v-if="opt.tabIdx === 2" :list="template.playablead" />
-                <ContentEtc v-if="opt.tabIdx === 3" :list="template.etc" />
-            </NuxtLayout>
             <FooterInfo v-if="opt.isMyInfoExist" />
         </NuxtLayout>
     </div>
@@ -25,30 +24,32 @@ const route = useRoute();
 
 const opt = reactive({
     tabIdx: <number>Number(route.query['tab'] ?? 0),
+    subIdx: <number>Number(route.query['sub'] ?? 0),
     isMyInfoExist: <boolean>!!(route.query['info'] ?? false),
 });
 
-const list = reactive({
+const listOpt = reactive({
     isExist: <boolean>false,
-    website: <TContentItem[]>[],
-    webgame: <TContentItem[]>[],
-    playablead: <TContentItem[]>[
+    websiteSampleList: <TContentItem[]>[],
+    websiteProdList: <TContentItem[]>[],
+    webgameSampleList: <TContentItem[]>[
+        {
+            // thumbnail: 'logo/playablead/sweetopia.png',
+            title: 'SWEETMERGE',
+            contentType: 'file'
+        },
+    ],
+    webgameProdList: <TContentItem[]>[],
+    playableadSampleList: <TContentItem[]>[],
+    playableadProdList: <TContentItem[]>[
         {
             thumbnail: 'logo/playablead/sweetopia.png',
             title: 'SWEETOPIA',
-            type: 'playablead',
             contentType: 'file'
         }
     ],
-    etc: <TContentItem[]>[],
-});
-
-const template = reactive({
-    isExist: <boolean>false,
-    website: <TContentItem[]>[],
-    webgame: <TContentItem[]>[],
-    playablead: <TContentItem[]>[],
-    etc: <TContentItem[]>[],
+    etcSampleList: <TContentItem[]>[],
+    etcProdList: <TContentItem[]>[],
 });
 
 watch(
@@ -56,45 +57,49 @@ watch(
     async (p) => {
         opt.tabIdx = Number(p);
         chckContentIsExist();
-        chckTemplateIsExist();
     }
+);
+
+watch(
+    () => route.query['sub'],
+    async (p) => {
+        opt.subIdx = Number(p);
+        chckContentIsExist();
+    },
 );
 
 const chckContentIsExist = () => {
     if (opt.tabIdx === 0) {
-        return list.isExist = !!list.website.length;
+        if (opt.subIdx === 0) {
+            return listOpt.isExist = !!listOpt.websiteSampleList.length;
+        }
+        return listOpt.isExist = !!listOpt.websiteProdList.length;
     }
     if (opt.tabIdx === 1) {
-        return list.isExist = !!list.webgame.length;
+        if (opt.subIdx === 0) {
+            return listOpt.isExist = !!listOpt.webgameSampleList.length;
+        }
+        return listOpt.isExist = !!listOpt.webgameProdList.length;
     }
     if (opt.tabIdx === 2) {
-        return list.isExist = !!list.playablead.length;
+        if (opt.subIdx === 0) {
+            return listOpt.isExist = !!listOpt.playableadSampleList.length;
+        }
+        return listOpt.isExist = !!listOpt.playableadProdList.length;
     }
     if (opt.tabIdx === 3) {
-        return list.isExist = !!list.etc.length;
+        return listOpt.isExist = !!listOpt.etcProdList.length;
     }
-    list.isExist = false;
+    listOpt.isExist = false;
 };
 
-const chckTemplateIsExist = () => {
-    if (opt.tabIdx === 0) {
-        return template.isExist = !!template.website.length;
-    }
-    if (opt.tabIdx === 1) {
-        return template.isExist = !!template.webgame.length;
-    }
-    if (opt.tabIdx === 2) {
-        return template.isExist = !!template.playablead.length;
-    }
-    if (opt.tabIdx === 3) {
-        return template.isExist = !!template.etc.length;
-    }
-    template.isExist = false;
+const getContext = (): string => {
+    return opt.tabIdx === 0 ? 'website' : opt.tabIdx === 1 ? 'webgame' : opt.tabIdx === 2 ? 'playablead' : 'etc';
 };
 
 onMounted(async () => {
     await nextTick();
-    chckTemplateIsExist();
+    chckContentIsExist();
 });
 </script>
 

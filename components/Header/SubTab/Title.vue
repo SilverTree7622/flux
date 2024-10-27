@@ -1,7 +1,10 @@
 <template>
     <NuxtLink
-        :to="`/showcase?tab=${ props.tabIdx }&sub=0`"
-        class="w-full text-center rounded-t-md mx-[1px] mt-[1px] px-auto bg-slate-400"
+        :to="`/showcase?tab=${ props.tabIdx }&sub=${ props.subIdx }`"
+        class="
+            w-full text-center rounded-3xl bg-slate-300
+            px-auto py-[1px]
+        "
         :class="getClass()"
     >
         {{ props.context }}
@@ -10,6 +13,7 @@
 <script setup lang="ts">
 const props = defineProps<{
     tabIdx: number;
+    subIdx: number;
     context: string;
     isToggled: boolean;
 }>();

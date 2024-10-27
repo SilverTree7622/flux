@@ -4,10 +4,10 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev --no-warnings",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
+    "dev": "npx nuxt dev --no-warnings",
+    "generate": "npx nuxt generate",
+    "preview": "npx nuxt preview",
+    "postinstall": "npx nuxt prepare",
     "predeploy": "npm run generate",
     "homepage": "https://silvertree7622.github.io/flux/",
     "deploy": "gh-pages --dotfiles -d .output/public"
@@ -19,6 +19,7 @@
     "vue": "latest"
   },
   "devDependencies": {
+    "@nuxt/devtools": "^1.5.0",
     "@nuxtjs/tailwindcss": "^6.12.1",
     "fs": "^0.0.1-security",
     "gh-pages": "^6.1.1",

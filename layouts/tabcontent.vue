@@ -4,6 +4,7 @@
         <HeaderTop v-if="!props.isNoTop" />
         <div class="my-4"></div>
         <HeaderTab :idx="props.tabIdx" />
+        <HeaderSubTab :tabIdx="props.tabIdx" :subIdx="props.subIdx" />
         <div class="w-full h-full bg-slate-400 rounded-b-md">
             <slot />
         </div>
@@ -13,6 +14,7 @@
 <script setup lang="ts">
 const props = defineProps<{
     tabIdx: number;
+    subIdx: number;
     isNoTop?: boolean;
 }>();
 </script>

@@ -2,7 +2,6 @@
 export type TContentItem = {
     thumbnail: string;
     title: string;
-    type?: TContentType;
     contentType?: TContentFormat;
     link?: string;
 };
