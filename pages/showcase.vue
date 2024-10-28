@@ -34,95 +34,34 @@ const opt = reactive({
 
 const listOpt = reactive({
     isExist: <boolean>false,
-    websiteSampleList: <TContentItem[]>[],
-    websiteProdList: <TContentItem[]>[],
-    webgameSampleList: <TContentItem[]>[
-        {
-            title: 'BRICKBREAKER',
-            contentType: 'file'
-        },
-        {
-            title: 'COLORBUMP',
-            contentType: 'file'
-        },
-        {
-            title: 'KNIFESHOT',
-            contentType: 'file'
-        },
-        {
-            title: 'MATCH3BLOSSOM',
-            contentType: 'file'
-        },
-        {
-            title: 'PUZZLE2048',
-            contentType: 'file'
-        },
-        {
-            title: 'PUZZLESHAPEBALANCE',
-            customTitle: '균형맞추기',
-            contentType: 'file'
-        },
-        {
-            title: 'PUZZLETETRISBLOCK',
-            customTitle: '테트리스Blast',
-            contentType: 'file'
-        },
-        {
-            title: 'PUZZLEWORLDSEARCH',
-            customTitle: '낱말찾기',
-            contentType: 'file'
-        },
-        {
-            title: 'SWEETMERGE',
-            customTitle: '수박게임',
-            contentType: 'file'
-        },
-        {
-            title: 'SWIPETENNIS',
-            customTitle: '테니스',
-            contentType: 'file'
-        },
-        {
-            title: 'BOXJENGA',
-            customTitle: '박스젠가',
-            contentType: 'file'
-        },
-        {
-            title: 'PUZZLEGOLF',
-            customTitle: '골프퍼즐',
-            contentType: 'file'
-        },
-        {
-            title: 'PUZZLETOWERBOOM',
-            customTitle: '타워폭파퍼즐',
-            contentType: 'file'
-        },
-        {
-            title: 'SQUARELANDING',
-            contentType: 'file'
-        },
-        {
-            title: 'BLOCKSTACK',
-            customTitle: '블록스택',
-            contentType: 'file'
-        },
-        {
-            title: 'FLAPPYBIRD',
-            customTitle: '플래피버드',
-            contentType: 'file'
-        },
+    websiteSampleList: <TContentItem[]> [],
+    websiteProdList: <TContentItem[]> [],
+    webgameSampleList: <TContentItem[]> [
+        { title: 'BRICKBREAKER', },
+        { title: 'COLORBUMP', },
+        { title: 'KNIFESHOT', },
+        { title: 'MATCH3BLOSSOM', },
+        { title: 'PUZZLE2048', },
+        { title: 'PUZZLESHAPEBALANCE', customTitle: '균형맞추기', },
+        { title: 'PUZZLETETRISBLOCK', customTitle: '테트리스Blast', },
+        { title: 'PUZZLEWORLDSEARCH', customTitle: '낱말찾기', },
+        { title: 'SWEETMERGE', customTitle: '수박게임', },
+        { title: 'SWIPETENNIS', customTitle: '테니스', },
+        { title: 'BOXJENGA', customTitle: '박스젠가', },
+        { title: 'PUZZLEGOLF', customTitle: '골프퍼즐', },
+        { title: 'PUZZLETOWERBOOM', customTitle: '타워폭파퍼즐', },
+        { title: 'SQUARELANDING', },
+        { title: 'BLOCKSTACK', customTitle: '블록스택', },
+        { title: 'FLAPPYBIRD', customTitle: '플래피버드', },
+        { title: 'DODGEFISH', },
     ],
-    webgameProdList: <TContentItem[]>[],
-    playableadSampleList: <TContentItem[]>[],
-    playableadProdList: <TContentItem[]>[
-        {
-            thumbnail: 'logo/playablead/sweetopia.png',
-            title: 'SWEETOPIA',
-            contentType: 'file'
-        }
+    webgameProdList: <TContentItem[]> [],
+    playableadSampleList: <TContentItem[]> [],
+    playableadProdList: <TContentItem[]> [
+        { thumbnail: 'logo/playablead/sweetopia.png', title: 'SWEETOPIA', }
     ],
-    etcSampleList: <TContentItem[]>[],
-    etcProdList: <TContentItem[]>[],
+    etcSampleList: <TContentItem[]> [],
+    etcProdList: <TContentItem[]> [],
 });
 
 watch(
