@@ -54,6 +54,8 @@ const listOpt = reactive({
         { title: 'BLOCKSTACK', customTitle: '블록스택', },
         { title: 'FLAPPYBIRD', customTitle: '플래피버드', },
         { title: 'DODGEFISH', },
+        { title: 'ENDLESSRUNNER', customTitle: '무한오르기', },
+        { title: 'BASKETBALL', customTitle: '농구', },
     ],
     webgameProdList: <TContentItem[]> [],
     playableadSampleList: <TContentItem[]> [],
