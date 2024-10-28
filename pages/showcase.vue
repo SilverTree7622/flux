@@ -56,6 +56,8 @@ const listOpt = reactive({
         { title: 'DODGEFISH', },
         { title: 'ENDLESSRUNNER', customTitle: '무한오르기', },
         { title: 'BASKETBALL', customTitle: '농구', },
+        { title: 'GEMSFALL', },
+        { title: 'VAMPIRESURVIVAL', customTitle: '뱀파이어서바이벌', },
     ],
     webgameProdList: <TContentItem[]> [],
     playableadSampleList: <TContentItem[]> [],
