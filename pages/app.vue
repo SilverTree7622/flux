@@ -40,7 +40,7 @@ onMounted(async () => {
     opt.isPending = true;
     await nextTick();
     try {
-        const res = await fetch(`./${opt.tab}/index.html`);
+        const res = await fetch(`/flux/privacy/${ opt.tab }/index.html`);
         if (!res.ok) throw new Error('콘텐츠를 불러올 수 없습니다.');
         opt.content = await res.text();
     } catch (error) {
