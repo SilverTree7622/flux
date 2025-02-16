@@ -33,14 +33,18 @@ const opt = reactive({
     tab: computed(() => {
         return route.query['tab'] ?? 'knife-shot';
     }),
+    type: computed(() => {
+        return route.query['type'] ?? 'privacy';
+    }),
     content: '',
 });
 
 onMounted(async () => {
     opt.isPending = true;
     await nextTick();
+    console.log('route.query: ', route.query);
     try {
-        const res = await fetch(`/flux/privacy/${ opt.tab }/index.html`);
+        const res = await fetch(`/flux/privacy/${ opt.tab }/${ opt.type }.html`);
         if (!res.ok) throw new Error('콘텐츠를 불러올 수 없습니다.');
         opt.content = await res.text();
     } catch (error) {
