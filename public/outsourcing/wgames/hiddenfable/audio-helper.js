@@ -46,7 +46,6 @@
                             return originalOnProcess.call(this);
                         };
                         
-                        console.log('Phaser 오디오 로더 패치 완료');
                     }
                 }, 100);
                 
