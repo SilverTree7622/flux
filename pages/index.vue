@@ -29,7 +29,7 @@ onMounted(async () => {
     await nextTick();
     opt.fullSrc = getFullSrc();
     if (!opt.fullSrc) {
-        navigateTo('/showcase');
+        navigateTo('/showcase?tab=2&sub=0');
     }
 });
 </script>
