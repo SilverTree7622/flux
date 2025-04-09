@@ -3,7 +3,7 @@
         :to="`/showcase?tab=${ props.tabIdx }&sub=${ props.subIdx }`"
         class="
             w-full text-center rounded-3xl bg-slate-300
-            px-auto py-[1px]
+            px-auto py-2
         "
         :class="getClass()"
     >

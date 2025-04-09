@@ -1,7 +1,7 @@
 <template>
     <NuxtLink
         :to="`/showcase?tab=${ props.tabIdx }&sub=0`"
-        class="w-full text-center rounded-t-md mx-[1px] mt-[1px] px-auto bg-slate-400"
+        class="w-full text-center rounded-t-md mx-[1px] mt-[1px] px-auto py-2 bg-slate-400"
         :class="getClass()"
     >
         {{ props.context }}

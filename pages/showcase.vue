@@ -4,15 +4,19 @@
             <div class="py-2"></div>
             <ContentPending v-if="opt.isPending" />
             <template v-else>
-                <ContentWebsite v-if="opt.tabIdx === 0 && opt.subIdx === 0" :type="'website'" :subIdx="opt.subIdx" :list="listOpt.websiteSampleList" />
-                <ContentWebsite v-if="opt.tabIdx === 0 && opt.subIdx === 1" :type="'website'" :subIdx="opt.subIdx" :list="listOpt.websiteProdList" />
-                <ContentWebGame v-if="opt.tabIdx === 1 && opt.subIdx === 0" :type="'webgame'" :subIdx="opt.subIdx" :list="listOpt.webgameSampleList" />
-                <ContentWebGame v-if="opt.tabIdx === 1 && opt.subIdx === 1" :type="'webgame'" :subIdx="opt.subIdx" :list="listOpt.webgameProdList" />
-                <ContentPlayableAD v-if="opt.tabIdx === 2 && opt.subIdx === 0" :type="'playablead'" :subIdx="opt.subIdx" :list="listOpt.playableadSampleList" />
-                <ContentPlayableAD v-if="opt.tabIdx === 2 && opt.subIdx === 1" :type="'playablead'" :subIdx="opt.subIdx" :list="listOpt.playableadProdList" />
-                <ContentEtc v-if="opt.tabIdx === 3 && opt.subIdx === 0" :type="'etc'" :subIdx="opt.subIdx" :list="listOpt.etcSampleList" />
-                <ContentEtc v-if="opt.tabIdx === 3 && opt.subIdx === 1" :type="'etc'" :subIdx="opt.subIdx" :list="listOpt.etcProdList" />
-                <ContentEmpty v-show="!listOpt.isExist" :context="getContext()" :type="opt.subIdx === 0 ? 'sample' : 'production'" />
+                <ContentWebsite v-if="opt.tabIdx === 0 && opt.subIdx === 0" :type="'website'" :list="listOpt.websiteAllList" />
+                <ContentWebsite v-if="opt.tabIdx === 0 && opt.subIdx === 1" :type="'website'" :list="listOpt.websiteSampleList" />
+                <ContentWebsite v-if="opt.tabIdx === 0 && opt.subIdx === 2" :type="'website'" :list="listOpt.websiteProdList" />
+                <ContentWebGame v-if="opt.tabIdx === 1 && opt.subIdx === 0" :type="'webgame'" :list="listOpt.webgameAllList" />
+                <ContentWebGame v-if="opt.tabIdx === 1 && opt.subIdx === 1" :type="'webgame'" :list="listOpt.webgameSampleList" />
+                <ContentWebGame v-if="opt.tabIdx === 1 && opt.subIdx === 2" :type="'webgame'" :list="listOpt.webgameProdList" />
+                <ContentPlayableAD v-if="opt.tabIdx === 2 && opt.subIdx === 0" :type="'playablead'" :list="listOpt.playableadAllList" />
+                <ContentPlayableAD v-if="opt.tabIdx === 2 && opt.subIdx === 1" :type="'playablead'" :list="listOpt.playableadSampleList" />
+                <ContentPlayableAD v-if="opt.tabIdx === 2 && opt.subIdx === 2" :type="'playablead'" :list="listOpt.playableadProdList" />
+                <ContentEtc v-if="opt.tabIdx === 3 && opt.subIdx === 0" :type="'etc'" :list="listOpt.etcAllList" />
+                <ContentEtc v-if="opt.tabIdx === 3 && opt.subIdx === 1" :type="'etc'" :list="listOpt.etcSampleList" />
+                <ContentEtc v-if="opt.tabIdx === 3 && opt.subIdx === 2" :type="'etc'" :list="listOpt.etcProdList" />
+                <ContentEmpty v-show="!listOpt.isExist" :context="getContext()" :type="getType()" />
             </template>
             <div class="py-2"></div>
             <FooterInfo v-if="opt.isMyInfoExist" />
@@ -34,8 +38,10 @@ const opt = reactive({
 
 const listOpt = reactive({
     isExist: <boolean>false,
+    websiteAllList: <TContentItem[]> [],
     websiteSampleList: <TContentItem[]> [],
     websiteProdList: <TContentItem[]> [],
+    webgameAllList: <TContentItem[]> [],
     webgameSampleList: <TContentItem[]> [
         { title: 'BRICKBREAKER', },
         { title: 'COLORBUMP', },
@@ -60,12 +66,15 @@ const listOpt = reactive({
         { title: 'VAMPIRESURVIVAL', customTitle: '뱀파이어서바이벌', },
     ],
     webgameProdList: <TContentItem[]> [],
+    playableadAllList: <TContentItem[]> [],
     playableadSampleList: <TContentItem[]> [],
     playableadProdList: <TContentItem[]> [
         { thumbnail: 'logo/playablead/sweetopia.png', title: 'Sweetopia', },
-        { title: 'Hidden Fable', },
-        { title: 'Dessert Bliss', },
+        { thumbnail: 'logo/playablead/flappy-hero.png', title: 'Flappy Hero', },
+        { thumbnail: 'logo/playablead/hidden-fable.png',title: 'Hidden Fable', },
+        { thumbnail: 'logo/playablead/dessert-bliss.png',title: 'Dessert Bliss', },
     ],
+    etcAllList: <TContentItem[]> [],
     etcSampleList: <TContentItem[]> [],
     etcProdList: <TContentItem[]> [],
 });
@@ -93,23 +102,38 @@ watch(
 const chckContentIsExist = () => {
     if (opt.tabIdx === 0) {
         if (opt.subIdx === 0) {
+            return listOpt.isExist = !!listOpt.websiteAllList.length;
+        }
+        if (opt.subIdx === 1) {
             return listOpt.isExist = !!listOpt.websiteSampleList.length;
         }
         return listOpt.isExist = !!listOpt.websiteProdList.length;
     }
     if (opt.tabIdx === 1) {
         if (opt.subIdx === 0) {
+            return listOpt.isExist = !!listOpt.webgameAllList.length;
+        }
+        if (opt.subIdx === 1) {
             return listOpt.isExist = !!listOpt.webgameSampleList.length;
         }
         return listOpt.isExist = !!listOpt.webgameProdList.length;
     }
     if (opt.tabIdx === 2) {
         if (opt.subIdx === 0) {
+            return listOpt.isExist = !!listOpt.playableadAllList.length;
+        }
+        if (opt.subIdx === 1) {
             return listOpt.isExist = !!listOpt.playableadSampleList.length;
         }
         return listOpt.isExist = !!listOpt.playableadProdList.length;
     }
     if (opt.tabIdx === 3) {
+        if (opt.subIdx === 0) {
+            return listOpt.isExist = !!listOpt.etcAllList.length;
+        }
+        if (opt.subIdx === 1) {
+            return listOpt.isExist = !!listOpt.etcSampleList.length;
+        }
         return listOpt.isExist = !!listOpt.etcProdList.length;
     }
     listOpt.isExist = false;
@@ -119,9 +143,49 @@ const getContext = (): string => {
     return opt.tabIdx === 0 ? 'website' : opt.tabIdx === 1 ? 'webgame' : opt.tabIdx === 2 ? 'playablead' : 'etc';
 };
 
+const getType = (): string => {
+    return opt.subIdx === 0 ? 'all' : opt.subIdx === 1 ? 'sample' : 'prod';
+};
+
 onMounted(async () => {
     opt.isPending = true;
     await nextTick();
+    listOpt.websiteSampleList = listOpt.websiteSampleList.map((item) => {
+        item.subIdx = 1;
+        return item;
+    });
+    listOpt.websiteSampleList = listOpt.websiteProdList.map((item) => {
+        item.subIdx = 2;
+        return item;
+    });
+    listOpt.webgameSampleList.map((item) => {
+        item.subIdx = 1;
+        return item;
+    });
+    listOpt.webgameProdList.map((item) => {
+        item.subIdx = 2;
+        return item;
+    });
+    listOpt.playableadSampleList.map((item) => {
+        item.subIdx = 1;
+        return item;
+    });
+    listOpt.playableadProdList.map((item) => {
+        item.subIdx = 2;
+        return item;
+    });
+    listOpt.etcSampleList.map((item) => {
+        item.subIdx = 1;
+        return item;
+    });
+    listOpt.etcProdList.map((item) => {
+        item.subIdx = 2;
+        return item;
+    });
+    listOpt.websiteAllList = [ ...listOpt.websiteSampleList, ...listOpt.websiteProdList ];
+    listOpt.webgameAllList = [ ...listOpt.webgameSampleList, ...listOpt.webgameProdList ];
+    listOpt.playableadAllList = [ ...listOpt.playableadSampleList, ...listOpt.playableadProdList ];
+    listOpt.etcAllList = [ ...listOpt.etcSampleList, ...listOpt.etcProdList ];
     chckContentIsExist();
     opt.isPending = false;
 });

@@ -1,9 +1,9 @@
 <template>
     <div class="flex flex-row">
         <HeaderTabTitle
-            :tabIdx="0"
-            :context="'website'"
-            :isToggled="props.idx === 0"
+            :tabIdx="2"
+            :context="'playable ad'"
+            :isToggled="props.idx === 2"
         />
         <HeaderTabTitle
             :tabIdx="1"
@@ -11,9 +11,9 @@
             :isToggled="props.idx === 1"
         />
         <HeaderTabTitle
-            :tabIdx="2"
-            :context="'playable ad'"
-            :isToggled="props.idx === 2"
+            :tabIdx="0"
+            :context="'website'"
+            :isToggled="props.idx === 0"
         />
         <HeaderTabTitle
             :tabIdx="3"

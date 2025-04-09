@@ -18,7 +18,7 @@
             :src="opt.fullSrc"
         >
         </iframe>
-        <div class="py-2"></div>
+        <!-- <div class="py-2"></div> -->
     </NuxtLayout>
 </template>
 

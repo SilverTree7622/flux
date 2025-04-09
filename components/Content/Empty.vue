@@ -10,7 +10,7 @@
 <script setup lang="ts">
 const props = defineProps<{
     context: string;
-    type: 'sample' | 'production';
+    type: string;
 }>();
 </script>
 

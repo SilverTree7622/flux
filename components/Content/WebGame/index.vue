@@ -5,7 +5,9 @@
             grid grid-cols-3 gap-4
         "
     >
-        <ContentItem v-for="(item, idx) in props.list" :key="idx" :type="props.type" :subIdx="props.subIdx" :item="item" />
+        <ContentItem
+            v-for="(item, idx) in props.list" :key="idx" :type="props.type" :item="item"
+        />
     </div>
 </template>
 <script setup lang="ts">
@@ -13,7 +15,6 @@ import type { TContentItem, TContentType } from '@/types/content';
 
 const props = defineProps<{
     type: TContentType;
-    subIdx: number;
     list: TContentItem[];
 }>();
 </script>

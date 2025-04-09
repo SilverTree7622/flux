@@ -8,7 +8,6 @@
         <ContentItem
             v-for="(item, idx) in props.list"
             :type="props.type"
-            :subIdx="props.subIdx"
             :item="item"
         />
     </div>
@@ -18,7 +17,6 @@ import type { TContentItem, TContentType } from '@/types/content';
 
 const props = defineProps<{
     type: TContentType;
-    subIdx: number;
     list: TContentItem[];
 }>();
 </script>

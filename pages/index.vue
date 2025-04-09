@@ -18,8 +18,10 @@ const opt = reactive({
 const getFullSrc = () => {
     const tab = route.query['tab'] as string ?? '';
     const game = route.query['game'] as string ?? '';
-    const src = `outsourcing/${tab}/${game}/index.html`;
-    console.log('src: ', src);
+    const src = `outsourcing/${ tab }/${ game }/index.html`;
+    if (!tab || !game) {
+        return '';
+    }
     return src;
 };
 
@@ -29,7 +31,6 @@ onMounted(async () => {
     if (!opt.fullSrc) {
         navigateTo('/showcase');
     }
-
 });
 </script>
 

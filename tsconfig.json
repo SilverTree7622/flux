@@ -6,6 +6,11 @@
     ".nuxt/nuxt.d.ts",
     "**/*"
   ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "public"
+  ],
   "compilerOptions": {
     "noImplicitAny": false,
   }
