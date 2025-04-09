@@ -25,7 +25,7 @@ const getSub = (): string => {
 const clickItem = () => {
     const link = props.item.link ? `&link=${ props.item.link }` : '';
     navigateTo(
-        `/content?type=${ props.type ?? 'website' }&sub=${ getSub() }&contenttype=${ props.item.contentType ?? 'file' }${ link }&name=${ props.item.title }`
+        `/content?type=${ props.type ?? 'website' }&sub=${ getSub() }&contenttype=${ props.item.contentType ?? 'file' }${ link }&name=${ props.item.title.replaceAll(' ', '-').toLowerCase() }`
     );
 };
 </script>

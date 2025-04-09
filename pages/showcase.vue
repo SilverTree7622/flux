@@ -62,7 +62,9 @@ const listOpt = reactive({
     webgameProdList: <TContentItem[]> [],
     playableadSampleList: <TContentItem[]> [],
     playableadProdList: <TContentItem[]> [
-        { thumbnail: 'logo/playablead/sweetopia.png', title: 'SWEETOPIA', }
+        { thumbnail: 'logo/playablead/sweetopia.png', title: 'Sweetopia', },
+        { title: 'Hidden Fable', },
+        { title: 'Dessert Bliss', },
     ],
     etcSampleList: <TContentItem[]> [],
     etcProdList: <TContentItem[]> [],
