@@ -1,0 +1,1 @@
+class s extends Phaser.Scene{constructor(){super("Boot")}preload(){window.__BOOT_ASSET_PACK__?this.load.pack("pack",window.__BOOT_ASSET_PACK__):this.load.pack("pack","boot-asset-pack.json")}create(){this.scene.start("Preloader")}}export{s as default};
