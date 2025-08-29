@@ -10,11 +10,11 @@
             :context="'web game'"
             :isToggled="props.idx === 1"
         />
-        <HeaderTabTitle
+        <!-- <HeaderTabTitle
             :tabIdx="0"
             :context="'website'"
             :isToggled="props.idx === 0"
-        />
+        /> -->
         <HeaderTabTitle
             :tabIdx="3"
             :context="'etc'"

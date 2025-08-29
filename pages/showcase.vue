@@ -1,12 +1,16 @@
 <template>
     <div class="w-full h-full">
-        <NuxtLayout name="tabcontent" :tabIdx="opt.tabIdx" :subIdx="opt.subIdx">
+        <NuxtLayout
+            name="tabcontent"
+            :tabIdx="opt.tabIdx"
+            :subIdx="opt.subIdx"
+        >
             <div class="py-2"></div>
             <ContentPending v-if="opt.isPending" />
             <template v-else>
-                <ContentWebsite v-if="opt.tabIdx === 0 && opt.subIdx === 0" :type="'website'" :list="listOpt.websiteAllList" />
+                <!-- <ContentWebsite v-if="opt.tabIdx === 0 && opt.subIdx === 0" :type="'website'" :list="listOpt.websiteAllList" />
                 <ContentWebsite v-if="opt.tabIdx === 0 && opt.subIdx === 1" :type="'website'" :list="listOpt.websiteSampleList" />
-                <ContentWebsite v-if="opt.tabIdx === 0 && opt.subIdx === 2" :type="'website'" :list="listOpt.websiteProdList" />
+                <ContentWebsite v-if="opt.tabIdx === 0 && opt.subIdx === 2" :type="'website'" :list="listOpt.websiteProdList" /> -->
                 <ContentWebGame v-if="opt.tabIdx === 1 && opt.subIdx === 0" :type="'webgame'" :list="listOpt.webgameAllList" />
                 <ContentWebGame v-if="opt.tabIdx === 1 && opt.subIdx === 1" :type="'webgame'" :list="listOpt.webgameSampleList" />
                 <ContentWebGame v-if="opt.tabIdx === 1 && opt.subIdx === 2" :type="'webgame'" :list="listOpt.webgameProdList" />
@@ -74,8 +78,10 @@ const listOpt = reactive({
         { thumbnail: 'logo/playablead/flappy-hero.png', title: 'Flappy Hero', },
         { thumbnail: 'logo/playablead/hidden-fable.png', title: 'Hidden Fable', },
         { thumbnail: 'logo/playablead/dessert-bliss.png', title: 'Dessert Bliss', },
-        { thumbnail: 'logo/playablead/ragnarok-idle-game-costume-version.png', title: 'Ragnarok Idle Game Costume Version', },
-        { thumbnail: 'logo/playablead/ragnarok-idle-game-fishing-version.png', title: 'Ragnarok Idle Game Fishing Version', },
+        { thumbnail: 'logo/playablead/ragnarok-idle-game.png', title: 'Ragnarok Idle Game Costume Version', },
+        { thumbnail: 'logo/playablead/ragnarok-idle-game.png', title: 'Ragnarok Idle Game Fishing Version', },
+        { thumbnail: 'logo/playablead/ragnarok-idle-game.png', title: 'Ragnarok Idle Game Pet Version', },
+        { thumbnail: 'logo/playablead/ragnarok-idle-game.png', title: 'Ragnarok Idle Game Play Version', },
         
     ],
     etcAllList: <TContentItem[]> [],
