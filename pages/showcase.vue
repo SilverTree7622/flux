@@ -72,8 +72,11 @@ const listOpt = reactive({
     playableadProdList: <TContentItem[]> [
         { thumbnail: 'logo/playablead/sweetopia.png', title: 'Sweetopia', },
         { thumbnail: 'logo/playablead/flappy-hero.png', title: 'Flappy Hero', },
-        { thumbnail: 'logo/playablead/hidden-fable.png',title: 'Hidden Fable', },
-        { thumbnail: 'logo/playablead/dessert-bliss.png',title: 'Dessert Bliss', },
+        { thumbnail: 'logo/playablead/hidden-fable.png', title: 'Hidden Fable', },
+        { thumbnail: 'logo/playablead/dessert-bliss.png', title: 'Dessert Bliss', },
+        { thumbnail: 'logo/playablead/ragnarok-idle-game-costume-version.png', title: 'Ragnarok Idle Game Costume Version', },
+        { thumbnail: 'logo/playablead/ragnarok-idle-game-fishing-version.png', title: 'Ragnarok Idle Game Fishing Version', },
+        
     ],
     etcAllList: <TContentItem[]> [],
     etcSampleList: <TContentItem[]> [],
