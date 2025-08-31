@@ -154,7 +154,7 @@ const getContext = (): string => {
 };
 
 const getType = (): string => {
-    return opt.subIdx === 0 ? 'all' : opt.subIdx === 1 ? 'sample' : 'prod';
+    return opt.subIdx === 0 ? 'all' : opt.subIdx === 1 ? 'template' : 'prod';
 };
 
 onMounted(async () => {

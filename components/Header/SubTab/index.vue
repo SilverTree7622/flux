@@ -9,7 +9,7 @@
         <HeaderSubTabTitle
             :tabIdx="props.tabIdx"
             :subIdx="1"
-            :context="'sample'"
+            :context="'template'"
             :isToggled="props.subIdx === 1"
         />
         <HeaderSubTabTitle
