@@ -82,7 +82,7 @@ const listOpt = reactive({
         { thumbnail: 'logo/playablead/ragnarok-idle-game.png', title: 'Ragnarok Idle Game Fishing Version', },
         { thumbnail: 'logo/playablead/ragnarok-idle-game.png', title: 'Ragnarok Idle Game Pet Version', },
         { thumbnail: 'logo/playablead/ragnarok-idle-game.png', title: 'Ragnarok Idle Game Play Version', },
-        
+        { thumbnail: 'logo/playablead/ragnarok-idle-game.png', title: 'Ragnarok Idle Game Garden Version', },
     ],
     etcAllList: <TContentItem[]> [],
     etcSampleList: <TContentItem[]> [],
