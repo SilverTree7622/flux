@@ -25,6 +25,10 @@
             <div class="py-2"></div>
             <FooterInfo v-if="opt.isMyInfoExist" />
         </NuxtLayout>
+        <ContentItemDetailModal 
+            v-if="modalOpt.isOpen"
+            :title="modalOpt.title" :src="modalOpt.src" :link="modalOpt.link"
+        />
     </div>
 </template>
 
@@ -39,6 +43,13 @@ const opt = reactive({
     subIdx: <number>Number(route.query['sub'] ?? 0),
     isMyInfoExist: <boolean>!!(route.query['info'] ?? false),
 });
+
+const modalOpt = useState('modal', () => ({
+    isOpen: false,
+    title: '',
+    src: '',
+    link: ''
+}));
 
 const listOpt = reactive({
     isExist: <boolean>false,

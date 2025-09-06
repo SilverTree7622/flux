@@ -8,6 +8,7 @@
         <ContentItemTitle :txt="props.item.customTitle ?? props.item.title" />
     </div>
 </template>
+
 <script setup lang="ts">
 import type { TContentItem, TContentType } from '@/types/content';
 
@@ -22,12 +23,23 @@ const getSub = (): string => {
 };
 
 const clickItem = () => {
-    const link = props.item.link ? `&link=${ props.item.link }` : '';
-    navigateTo(
-        `/content?type=${ props.type ?? 'website' }&sub=${ getSub() }&contenttype=${ props.item.contentType ?? 'file' }${ link }&name=${ props.item.title.replaceAll(' ', '-').toLowerCase() }`
-    );
+    // 모달 상태 업데이트
+    const modalState = useState('modal', () => ({
+        isOpen: false,
+        title: '',
+        src: '',
+        link: ''
+    }));
+    
+    modalState.value = {
+        isOpen: true,
+        title: props.item.customTitle ?? props.item.title,
+        src: props.item.thumbnail || 'BlackLogo.jpg',
+        link: `/content?type=${ props.type ?? 'website' }&sub=${ getSub() }&contenttype=${ props.item.contentType ?? 'file' }${ props.item.link ? `&link=${ props.item.link }` : '' }&name=${ props.item.title.replaceAll(' ', '-').toLowerCase() }`
+    };
 };
 </script>
+
 <style scoped>
 .content-item {
     cursor: pointer;
@@ -42,5 +54,4 @@ const clickItem = () => {
     margin-top: 0.25rem;
     margin-bottom: 0.25rem;
 }
-
 </style>
