@@ -74,7 +74,7 @@
                     </div>
                 </div>
 
-                <!-- 프로덕트 관련 링크들(앱 스토어, 웹사이트 등) -->
+                <!-- 프로덕트 링크(앱 스토어, 웹사이트 등) -->
                 <div v-if="contentInfo?.links?.length" class="links-section">
                     <h3 class="section-title">프로덕트 링크</h3>
                     <div class="links-container">
@@ -88,6 +88,21 @@
                         >
                             {{ getShortenedUrl(link) }}
                         </a>
+                    </div>
+                </div>
+                
+                <!-- 카테고리 -->
+                <div v-if="contentInfo?.category" class="category-section">
+                    <h3 class="section-title">카테고리</h3>
+                    <div class="category-tags">
+                        <span class="category-tag">
+                            <img 
+                                v-if="getCategoryImage(contentInfo.category) !== null"
+                                :src="getCategoryImage(contentInfo.category)!"
+                                class="category-logo"
+                            />
+                            {{ getCategoryName(contentInfo.category) }}
+                        </span>
                     </div>
                 </div>
 
@@ -144,20 +159,6 @@
                     </div>
                 </div>
 
-                <!-- 카테고리 -->
-                <div v-if="contentInfo?.category" class="category-section">
-                    <h3 class="section-title">카테고리</h3>
-                    <div class="category-tags">
-                        <span class="category-tag">
-                            <img 
-                                v-if="getCategoryImage(contentInfo.category) !== null"
-                                :src="getCategoryImage(contentInfo.category)!"
-                                class="category-logo"
-                            />
-                            {{ getCategoryName(contentInfo.category) }}
-                        </span>
-                    </div>
-                </div>
             </div>
 
             <!-- 플레이 버튼 -->
