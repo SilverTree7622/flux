@@ -93,7 +93,7 @@
                 
                 <!-- 카테고리 -->
                 <div v-if="contentInfo?.category" class="category-section">
-                    <h3 class="section-title">카테고리</h3>
+                    <h3 class="section-title">프로덕트 카테고리</h3>
                     <div class="category-tags">
                         <span class="category-tag">
                             <img 
