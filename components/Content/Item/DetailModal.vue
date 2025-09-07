@@ -29,7 +29,12 @@
                 {{ props.title }}
             </h2>
 
-            <div class="content-container">
+
+            <div v-if="opt.isPending" class="pending-container">
+                <ContentPending />
+            </div>
+
+            <div v-else class="content-container">
                 <!-- 의뢰 회사 -->
                 <div v-if="contentInfo?.company" class="company-section">
                     <div class="company-header">
@@ -187,6 +192,10 @@ const props = defineProps<{
     link: string;
 }>();
 
+const opt = reactive({
+    isPending: <boolean> true,
+});
+
 const contentInfo = ref<ContentInfo | null>(null);
 
 const closeModal = () => {
@@ -196,6 +205,7 @@ const closeModal = () => {
         src: '',
         link: ''
     }));
+    opt.isPending = true;
     modalState.value.isOpen = false;
 };
 
@@ -308,8 +318,10 @@ const loadContentInfo = async () => {
 };
 
 onMounted(async () => {
+    opt.isPending = true;
     await nextTick();
     await loadContentInfo();
+    opt.isPending = false;
 });
 </script>
 
@@ -626,6 +638,15 @@ onMounted(async () => {
     content: "↗";
     font-size: 0.625rem;
     opacity: 0.7;
+}
+
+.pending-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* height: 100%; */
+    height: 50vh;
 }
 
 /* 콘텐츠 컨테이너 */

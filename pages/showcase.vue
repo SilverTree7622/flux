@@ -90,6 +90,7 @@ const listOpt = reactive({
         { thumbnail: 'logo/playablead/hidden-fable.png', title: 'Hidden Fable', },
         { thumbnail: 'logo/playablead/dessert-bliss.png', title: 'Dessert Bliss', },
         { thumbnail: 'logo/playablead/ragnarok-idle-game.png', title: 'Ragnarok Idle Game Costume Version', },
+        { thumbnail: 'logo/playablead/ragnarok-idle-game.png', title: 'Ragnarok Idle Game Costume Version Responsive', },
         { thumbnail: 'logo/playablead/ragnarok-idle-game.png', title: 'Ragnarok Idle Game Fishing Version', },
         { thumbnail: 'logo/playablead/ragnarok-idle-game.png', title: 'Ragnarok Idle Game Pet Version', },
         { thumbnail: 'logo/playablead/ragnarok-idle-game.png', title: 'Ragnarok Idle Game Play Version', },
