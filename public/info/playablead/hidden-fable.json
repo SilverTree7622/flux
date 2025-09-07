@@ -1,0 +1,20 @@
+{
+    "title": "Hidden Fable",
+    "company": "DoubleUGames",
+    "companyLink": "https://www.doubleugames.com/main/main.html?",
+    "productLinks": [
+        "https://www.taptap.io/kr/app/33819713",
+        "https://www.youtube.com/watch?v=-AkVm1yKVYM"
+    ],
+    "links": [
+        
+    ],
+    "orientation": "portrait",
+    "networkTypes": [
+        "meta", "google"
+    ],
+    "devType": [
+        "code"
+    ],
+    "category": "game"
+}

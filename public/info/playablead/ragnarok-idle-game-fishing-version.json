@@ -1,0 +1,20 @@
+{
+    "title": "Ragnarok Idle Game Fishing Version",
+    "company": "Gravity",
+    "companyLink": "https://www.gravity.co.kr/kr",
+    "productLinks": [
+        "https://www.youtube.com/watch?v=Bh7UcG09s4k"
+    ],
+    "links": [
+        "https://play.google.com/store/apps/details?id=com.gravity.roidle.google&hl=ko",
+        "https://apps.apple.com/kr/app/id6747020932"
+    ],
+    "orientation": "portrait",
+    "networkTypes": [
+        "meta", "google", "tiktok", "mintegral", "appier"
+    ],
+    "devType": [
+        "code"
+    ],
+    "category": "game"
+}

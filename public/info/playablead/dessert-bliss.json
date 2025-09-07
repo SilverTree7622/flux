@@ -1,0 +1,19 @@
+{
+    "title": "Dessert Bliss",
+    "company": "DoubleUGames",
+    "companyLink": "https://www.doubleugames.com/main/main.html?",
+    "productLinks": [
+        "https://www.youtube.com/watch?v=CqLDZWsNE4M"
+    ],
+    "links": [
+        "https://play.google.com/store/apps/details?id=com.doubleugames.ngfe.ds&hl=ko"
+    ],
+    "orientation": "portrait",
+    "networkTypes": [
+        "meta", "google"
+    ],
+    "devType": [
+        "code"
+    ],
+    "category": "game"
+}
