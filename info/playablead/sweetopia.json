@@ -1,0 +1,20 @@
+{
+    "title": "Sweetopia",
+    "company": "Flyway Games, Inc.",
+    "companyLink": "https://flywaygames.com/",
+    "productLinks": [
+        "https://www.taptap.io/app/33696596",
+        "https://www.youtube.com/watch?v=gGx58Gxt5XA"
+    ],
+    "links": [
+        
+    ],
+    "orientation": "portrait",
+    "networkTypes": [
+        "meta", "google"
+    ],
+    "devType": [
+        "code", "video"
+    ],
+    "category": "game"
+}

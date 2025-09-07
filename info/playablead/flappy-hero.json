@@ -1,0 +1,20 @@
+{
+    "title": "Flappy Hero",
+    "company": "DoubleUGames",
+    "companyLink": "https://www.doubleugames.com/main/main.html?",
+    "productLinks": [
+        "https://flappy-hero-mja.softonic.kr/android",
+        "https://www.youtube.com/watch?v=RfylwgxdsUY"
+    ],
+    "links": [
+        
+    ],
+    "orientation": "portrait",
+    "networkTypes": [
+        "meta", "google"
+    ],
+    "devType": [
+        "code"
+    ],
+    "category": "game"
+}
