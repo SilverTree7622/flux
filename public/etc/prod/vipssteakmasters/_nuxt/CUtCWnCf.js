@@ -1,0 +1,1 @@
+import{_ as s,a as c,c as t,a0 as a}from"./Dlfjtg9p.js";const n={},o={class:"layout-fullscreen"};function r(e,l){return c(),t("div",o,[a(e.$slots,"default",{},void 0)])}const _=s(n,[["render",r],["__scopeId","data-v-d9218267"]]);export{_ as default};

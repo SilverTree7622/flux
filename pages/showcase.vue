@@ -26,8 +26,15 @@
             <FooterInfo v-if="opt.isMyInfoExist" />
         </NuxtLayout>
         <ContentItemDetailModal 
-            v-if="modalOpt.isOpen"
+            v-if="modalOpt.isOpen && isPlayableAdModal"
             :title="modalOpt.title" :src="modalOpt.src" :link="modalOpt.link"
+        />
+        <ContentItemWebsiteDetailModal
+            v-if="modalOpt.isOpen && isWebsiteModal"
+            :title="modalOpt.title"
+            :src="modalOpt.src"
+            :link="modalOpt.link"
+            :info-path="modalOpt.type === 'etc' ? 'etc' : 'website'"
         />
     </div>
 </template>
@@ -48,8 +55,12 @@ const modalOpt = useState('modal', () => ({
     isOpen: false,
     title: '',
     src: '',
-    link: ''
+    link: '',
+    type: 'playablead',
 }));
+
+const isPlayableAdModal = computed(() => modalOpt.value.type === 'playablead');
+const isWebsiteModal = computed(() => modalOpt.value.type === 'website' || modalOpt.value.type === 'etc');
 
 const listOpt = reactive({
     isExist: <boolean>false,
@@ -98,28 +109,32 @@ const listOpt = reactive({
     ],
     etcAllList: <TContentItem[]> [],
     etcSampleList: <TContentItem[]> [],
-    etcProdList: <TContentItem[]> [],
+    etcProdList: <TContentItem[]> [
+        { thumbnail: 'logo/etc/vips-steak-masters.png', title: 'vipssteakmasters', customTitle: 'VIPS Steak Masters' },
+    ],
 });
 
-watch(
-    () => route.query['tab'],
-    async (p) => {
-        opt.isPending = true;
-        opt.tabIdx = Number(p);
-        chckContentIsExist();
-        opt.isPending = false;
-    }
-);
+const applySubIdx = (list: TContentItem[], subIdx: 1 | 2) => {
+    list.forEach((item) => {
+        item.subIdx = subIdx;
+    });
+};
 
-watch(
-    () => route.query['sub'],
-    async (p) => {
-        opt.isPending = true;
-        opt.subIdx = Number(p);
-        chckContentIsExist();
-        opt.isPending = false;
-    },
-);
+const buildAllLists = () => {
+    applySubIdx(listOpt.websiteSampleList, 1);
+    applySubIdx(listOpt.websiteProdList, 2);
+    applySubIdx(listOpt.webgameSampleList, 1);
+    applySubIdx(listOpt.webgameProdList, 2);
+    applySubIdx(listOpt.playableadSampleList, 1);
+    applySubIdx(listOpt.playableadProdList, 2);
+    applySubIdx(listOpt.etcSampleList, 1);
+    applySubIdx(listOpt.etcProdList, 2);
+
+    listOpt.websiteAllList = [ ...listOpt.websiteSampleList, ...listOpt.websiteProdList ];
+    listOpt.webgameAllList = [ ...listOpt.webgameSampleList, ...listOpt.webgameProdList ];
+    listOpt.playableadAllList = [ ...listOpt.playableadSampleList, ...listOpt.playableadProdList ];
+    listOpt.etcAllList = [ ...listOpt.etcSampleList, ...listOpt.etcProdList ];
+};
 
 const chckContentIsExist = () => {
     if (opt.tabIdx === 0) {
@@ -169,48 +184,28 @@ const getType = (): string => {
     return opt.subIdx === 0 ? 'all' : opt.subIdx === 1 ? 'template' : 'prod';
 };
 
-onMounted(async () => {
-    opt.isPending = true;
-    await nextTick();
-    listOpt.websiteSampleList = listOpt.websiteSampleList.map((item) => {
-        item.subIdx = 1;
-        return item;
-    });
-    listOpt.websiteSampleList = listOpt.websiteProdList.map((item) => {
-        item.subIdx = 2;
-        return item;
-    });
-    listOpt.webgameSampleList.map((item) => {
-        item.subIdx = 1;
-        return item;
-    });
-    listOpt.webgameProdList.map((item) => {
-        item.subIdx = 2;
-        return item;
-    });
-    listOpt.playableadSampleList.map((item) => {
-        item.subIdx = 1;
-        return item;
-    });
-    listOpt.playableadProdList.map((item) => {
-        item.subIdx = 2;
-        return item;
-    });
-    listOpt.etcSampleList.map((item) => {
-        item.subIdx = 1;
-        return item;
-    });
-    listOpt.etcProdList.map((item) => {
-        item.subIdx = 2;
-        return item;
-    });
-    listOpt.websiteAllList = [ ...listOpt.websiteSampleList, ...listOpt.websiteProdList ];
-    listOpt.webgameAllList = [ ...listOpt.webgameSampleList, ...listOpt.webgameProdList ];
-    listOpt.playableadAllList = [ ...listOpt.playableadSampleList, ...listOpt.playableadProdList ];
-    listOpt.etcAllList = [ ...listOpt.etcSampleList, ...listOpt.etcProdList ];
-    chckContentIsExist();
-    opt.isPending = false;
-});
+buildAllLists();
+chckContentIsExist();
+
+watch(
+    () => route.query['tab'],
+    async (p) => {
+        opt.isPending = true;
+        opt.tabIdx = Number(p);
+        chckContentIsExist();
+        opt.isPending = false;
+    }
+);
+
+watch(
+    () => route.query['sub'],
+    async (p) => {
+        opt.isPending = true;
+        opt.subIdx = Number(p);
+        chckContentIsExist();
+        opt.isPending = false;
+    },
+);
 </script>
 
 <style scoped></style>

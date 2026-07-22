@@ -23,19 +23,20 @@ const getSub = (): string => {
 };
 
 const clickItem = () => {
-    // 모달 상태 업데이트
     const modalState = useState('modal', () => ({
         isOpen: false,
         title: '',
         src: '',
-        link: ''
+        link: '',
+        type: 'playablead' as string,
     }));
     
     modalState.value = {
         isOpen: true,
         title: props.item.customTitle ?? props.item.title,
         src: props.item.thumbnail || 'BlackLogo.jpg',
-        link: `/content?type=${ props.type ?? 'website' }&sub=${ getSub() }&contenttype=${ props.item.contentType ?? 'file' }${ props.item.link ? `&link=${ props.item.link }` : '' }&name=${ props.item.title.replaceAll(' ', '-').toLowerCase() }`
+        link: `/content?type=${ props.type ?? 'website' }&sub=${ getSub() }&contenttype=${ props.item.contentType ?? 'file' }${ props.item.link ? `&link=${ props.item.link }` : '' }&name=${ props.item.title.replaceAll(' ', '-').toLowerCase() }`,
+        type: props.type ?? 'website',
     };
 };
 </script>

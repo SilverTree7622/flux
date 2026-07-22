@@ -204,7 +204,8 @@ const closeModal = () => {
         isOpen: false,
         title: '',
         src: '',
-        link: ''
+        link: '',
+        type: 'playablead' as string,
     }));
     opt.isPending = true;
     modalState.value.isOpen = false;
