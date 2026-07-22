@@ -2,6 +2,7 @@
     <NuxtLayout 
         name="tabcontent"
         :tabIdx="-1"
+        :subIdx="0"
         :isNoTop="true"
     >
         <div class="py-2"></div>
