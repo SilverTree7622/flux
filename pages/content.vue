@@ -99,18 +99,18 @@ const loadInfoUrl = async (): Promise<string> => {
 
 const resolveFullSrc = async () => {
     if (opt.iframeUrl) {
-        console.log('src (query): ', opt.iframeUrl);
+        // console.log('src (query): ', opt.iframeUrl);
         return opt.iframeUrl;
     }
 
     const infoUrl = await loadInfoUrl();
     if (infoUrl) {
-        console.log('src (info.url): ', infoUrl);
+        // console.log('src (info.url): ', infoUrl);
         return infoUrl;
     }
 
     const localSrc = getLocalSrc();
-    console.log('src (local): ', localSrc);
+    // console.log('src (local): ', localSrc);
     return localSrc;
 };
 

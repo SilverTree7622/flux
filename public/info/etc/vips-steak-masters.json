@@ -1,11 +1,13 @@
 {
     "title": "VIPS Steak Masters",
-    "description": "빕스 스테이크 마스터즈 프로모션용 웹 이벤트. 스테이크를 구워 완성하는 인터랙티브 경험을 제공합니다.",
+    "description": "빕스 스테이크 마스터즈 프로모션용 웹 이벤트 사이트. 스테이크를 구워 완성하여 높은 점수를 얻는 사람들 중 추첨하여 상품을 주는 식으로 진행하는 이벤트 사이트 제작.",
     "company": "VIPS",
     "companyLink": "https://www.ivips.co.kr/",
     "productLinks": [],
     "links": [],
     "category": "event",
     "devices": ["mobile", "desktop"],
-    "url": "https://vips-open-gamification-site.dong5966.workers.dev/"
+    "url": "https://vips-open-gamification-site.dong5966.workers.dev/",
+    "startDate": "2025-06-30",
+    "endDate": "2025-07-19"
 }

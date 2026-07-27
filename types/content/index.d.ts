@@ -23,6 +23,12 @@ export type TWebsiteContentInfo = {
     devices?: ('mobile' | 'desktop' | 'tablet')[];
     /** 있으면 iframe에 사용, 없으면 로컬 path */
     url?: string;
+    /** 'YYYY-MM-DD' */
+    startDate?: string;
+    /** 'YYYY-MM-DD' */
+    endDate?: string;
+    /** 커스텀 유의사항 목록 */
+    notice?: string[];
 };
 
 export type TPlayableAdContentInfo = {

@@ -201,6 +201,12 @@ const closeModal = () => {
     modalState.value.isOpen = false;
 };
 
+const onKeydown = (event: KeyboardEvent) => {
+    if (event.key === 'Escape') {
+        closeModal();
+    }
+};
+
 const playContent = () => {
     navigateTo(props.link);
     closeModal();
@@ -310,10 +316,15 @@ const loadContentInfo = async () => {
 };
 
 onMounted(async () => {
+    window.addEventListener('keydown', onKeydown);
     opt.isPending = true;
     await nextTick();
     await loadContentInfo();
     opt.isPending = false;
+});
+
+onUnmounted(() => {
+    window.removeEventListener('keydown', onKeydown);
 });
 </script>
 

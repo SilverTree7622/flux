@@ -125,6 +125,36 @@
                         </span>
                     </div>
                 </div>
+
+                <div v-if="hasPeriod" class="period-section">
+                    <h3 class="section-title">기간</h3>
+                    <div class="period-row">
+                        <div class="period-dates">
+                            <span class="period-date">시작 {{ displayStartDate }}</span>
+                            <span class="period-separator">~</span>
+                            <span class="period-date">마감 {{ displayEndDate }}</span>
+                        </div>
+                        <span
+                            class="period-status"
+                            :class="isInProgress ? 'period-status--ongoing' : 'period-status--ended'"
+                        >
+                            {{ isInProgress ? '진행 중' : '종료' }}
+                        </span>
+                    </div>
+                </div>
+
+                <div v-if="noticeList.length" class="notice-section">
+                    <h3 class="section-title">유의사항</h3>
+                    <div class="notice-list">
+                        <p
+                            v-for="(item, index) in noticeList"
+                            :key="index"
+                            class="notice-item"
+                        >
+                            {{ item }}
+                        </p>
+                    </div>
+                </div>
             </div>
 
             <div class="button-container">
@@ -155,6 +185,66 @@ const opt = reactive({
 
 const contentInfo = ref<TWebsiteContentInfo | null>(null);
 
+const EXPIRED_MOCK_NOTICE =
+    '라이브 서비스 중에는 실제 서버를 이용했으나, 포트폴리오에는 mock up으로 교체해 올려두었으니 참고 부탁드립니다.';
+
+const parseLocalDate = (dateStr: string) => {
+    const [year, month, day] = dateStr.split('-').map(Number);
+    if (!year || !month || !day) return null;
+    return new Date(year, month - 1, day);
+};
+
+const getTodayStart = () => {
+    const today = new Date();
+    return new Date(today.getFullYear(), today.getMonth(), today.getDate());
+};
+
+const hasPeriod = computed(() => {
+    return Boolean(contentInfo.value?.startDate || contentInfo.value?.endDate);
+});
+
+const isInProgress = computed(() => {
+    const endDate = contentInfo.value?.endDate;
+    if (!endDate) return true;
+    const parsed = parseLocalDate(endDate);
+    if (!parsed) return true;
+    return parsed >= getTodayStart();
+});
+
+const formatDate = (dateStr: string) => {
+    const parsed = parseLocalDate(dateStr);
+    if (!parsed) return dateStr;
+    const y = parsed.getFullYear();
+    const m = String(parsed.getMonth() + 1).padStart(2, '0');
+    const d = String(parsed.getDate()).padStart(2, '0');
+    return `${y}.${m}.${d}`;
+};
+
+/** startDate/endDate 없으면 각각 미정 */
+const displayStartDate = computed(() => {
+    return contentInfo.value?.startDate
+        ? formatDate(contentInfo.value.startDate)
+        : '미정';
+});
+
+const displayEndDate = computed(() => {
+    return contentInfo.value?.endDate
+        ? formatDate(contentInfo.value.endDate)
+        : '미정';
+});
+
+const noticeList = computed(() => {
+    const list = [...(contentInfo.value?.notice ?? [])];
+    const endDate = contentInfo.value?.endDate;
+    if (endDate) {
+        const parsed = parseLocalDate(endDate);
+        if (parsed && parsed < getTodayStart()) {
+            list.push(EXPIRED_MOCK_NOTICE);
+        }
+    }
+    return list;
+});
+
 const closeModal = () => {
     const modalState = useState('modal', () => ({
         isOpen: false,
@@ -165,6 +255,12 @@ const closeModal = () => {
     }));
     opt.isPending = true;
     modalState.value.isOpen = false;
+};
+
+const onKeydown = (event: KeyboardEvent) => {
+    if (event.key === 'Escape') {
+        closeModal();
+    }
 };
 
 const openContent = () => {
@@ -236,10 +332,15 @@ const loadContentInfo = async () => {
 };
 
 onMounted(async () => {
+    window.addEventListener('keydown', onKeydown);
     opt.isPending = true;
     await nextTick();
     await loadContentInfo();
     opt.isPending = false;
+});
+
+onUnmounted(() => {
+    window.removeEventListener('keydown', onKeydown);
 });
 </script>
 
@@ -522,5 +623,72 @@ onMounted(async () => {
     border-radius: 1rem;
     font-size: 0.75rem;
     font-weight: 500;
+}
+
+.period-section {
+    margin-bottom: 1rem;
+}
+
+.period-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.period-dates {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    flex-wrap: wrap;
+}
+
+.period-date {
+    color: #4b5563;
+    font-size: 0.875rem;
+}
+
+.period-separator {
+    color: #9ca3af;
+    font-size: 0.875rem;
+}
+
+.period-status {
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.period-status--ongoing {
+    background-color: #ccfbf1;
+    color: #115e59;
+}
+
+.period-status--ended {
+    background-color: #f3f4f6;
+    color: #6b7280;
+}
+
+.notice-section {
+    margin-bottom: 1rem;
+}
+
+.notice-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.notice-item {
+    margin: 0;
+    padding: 0.75rem;
+    background-color: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 0.5rem;
+    color: #92400e;
+    font-size: 0.8125rem;
+    line-height: 1.5;
 }
 </style>
