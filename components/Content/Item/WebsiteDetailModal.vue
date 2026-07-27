@@ -270,8 +270,8 @@ const openContent = () => {
     linkUrl.searchParams.forEach((value, key) => {
         query[key] = value;
     });
-    if (info?.url) {
-        query.iframeurl = info.url;
+    if (info?.url && import.meta.client) {
+        sessionStorage.setItem('flux:content:iframeUrl', info.url);
     }
     navigateTo({
         path: '/content',

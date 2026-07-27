@@ -38,8 +38,12 @@ const getSubType = () => queryString('sub');
 const getContentType = () => queryString('contenttype') || 'file';
 const getName = () => queryString('name');
 const getLink = () => queryString('link');
-const getIframeUrl = () => queryString('iframeurl');
 const getInfoTitle = () => queryString('infotitle') || getName();
+
+const readStoredIframeUrl = (): string => {
+    if (!import.meta.client) return '';
+    return sessionStorage.getItem('flux:content:iframeUrl')?.trim() || '';
+};
 
 const opt = reactive({
     isPending: <boolean> true,
@@ -48,7 +52,7 @@ const opt = reactive({
     contentType: <string> getContentType(),
     url: <string> getName(),
     link: <string> getLink(),
-    iframeUrl: <string> getIframeUrl(),
+    iframeUrl: <string> '',
     infoTitle: <string> getInfoTitle(),
     fullSrc: <string> '',
 });
@@ -99,19 +103,15 @@ const loadInfoUrl = async (): Promise<string> => {
 
 const resolveFullSrc = async () => {
     if (opt.iframeUrl) {
-        // console.log('src (query): ', opt.iframeUrl);
         return opt.iframeUrl;
     }
 
     const infoUrl = await loadInfoUrl();
     if (infoUrl) {
-        // console.log('src (info.url): ', infoUrl);
         return infoUrl;
     }
 
-    const localSrc = getLocalSrc();
-    // console.log('src (local): ', localSrc);
-    return localSrc;
+    return getLocalSrc();
 };
 
 onMounted(async () => {
@@ -136,7 +136,7 @@ onMounted(async () => {
     opt.contentType = getContentType();
     opt.url = getName();
     opt.link = getLink();
-    opt.iframeUrl = getIframeUrl();
+    opt.iframeUrl = readStoredIframeUrl();
     opt.infoTitle = getInfoTitle();
     opt.fullSrc = await resolveFullSrc();
     opt.isPending = false;
