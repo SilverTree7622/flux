@@ -6,5 +6,6 @@
     "productLinks": [],
     "links": [],
     "category": "event",
-    "devices": ["mobile", "desktop"]
+    "devices": ["mobile", "desktop"],
+    "url": "https://vips-open-gamification-site.dong5966.workers.dev/"
 }

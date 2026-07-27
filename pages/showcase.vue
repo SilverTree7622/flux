@@ -8,9 +8,6 @@
             <div class="py-2"></div>
             <ContentPending v-if="opt.isPending" />
             <template v-else>
-                <!-- <ContentWebsite v-if="opt.tabIdx === 0 && opt.subIdx === 0" :type="'website'" :list="listOpt.websiteAllList" />
-                <ContentWebsite v-if="opt.tabIdx === 0 && opt.subIdx === 1" :type="'website'" :list="listOpt.websiteSampleList" />
-                <ContentWebsite v-if="opt.tabIdx === 0 && opt.subIdx === 2" :type="'website'" :list="listOpt.websiteProdList" /> -->
                 <ContentWebGame v-if="opt.tabIdx === 1 && opt.subIdx === 0" :type="'webgame'" :list="listOpt.webgameAllList" />
                 <ContentWebGame v-if="opt.tabIdx === 1 && opt.subIdx === 1" :type="'webgame'" :list="listOpt.webgameSampleList" />
                 <ContentWebGame v-if="opt.tabIdx === 1 && opt.subIdx === 2" :type="'webgame'" :list="listOpt.webgameProdList" />

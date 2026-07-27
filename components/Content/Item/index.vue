@@ -30,12 +30,14 @@ const clickItem = () => {
         link: '',
         type: 'playablead' as string,
     }));
+
+    const displayTitle = props.item.customTitle ?? props.item.title;
     
     modalState.value = {
         isOpen: true,
-        title: props.item.customTitle ?? props.item.title,
+        title: displayTitle,
         src: props.item.thumbnail || 'BlackLogo.jpg',
-        link: `/content?type=${ props.type ?? 'website' }&sub=${ getSub() }&contenttype=${ props.item.contentType ?? 'file' }${ props.item.link ? `&link=${ props.item.link }` : '' }&name=${ props.item.title.replaceAll(' ', '-').toLowerCase() }`,
+        link: `/content?type=${ props.type ?? 'website' }&sub=${ getSub() }&contenttype=${ props.item.contentType ?? 'file' }${ props.item.link ? `&link=${ encodeURIComponent(props.item.link) }` : '' }&name=${ props.item.title.replaceAll(' ', '-').toLowerCase() }&infotitle=${ encodeURIComponent(displayTitle) }`,
         type: props.type ?? 'website',
     };
 };

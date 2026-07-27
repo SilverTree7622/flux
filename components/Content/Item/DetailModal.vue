@@ -175,17 +175,7 @@
 </template>
 
 <script setup lang="ts">
-type ContentInfo = {
-    title: string;
-    links: string[];
-    company: string;
-    companyLink: string;
-    productLinks: string[];
-    orientation: 'portrait' | 'landscape' | 'responsive';
-    networkTypes: string[];
-    devType: ('code' | 'video')[];
-    category: 'game' | 'shopping' | 'music' | 'travel';
-};
+import type { TPlayableAdContentInfo } from '@/types/content';
 
 const props = defineProps<{
     title: string;
@@ -197,7 +187,7 @@ const opt = reactive({
     isPending: <boolean> true,
 });
 
-const contentInfo = ref<ContentInfo | null>(null);
+const contentInfo = ref<TPlayableAdContentInfo | null>(null);
 
 const closeModal = () => {
     const modalState = useState('modal', () => ({
@@ -221,7 +211,7 @@ const getJsonFileName = (title: string) => {
     return title.toLowerCase().replace(/\s+/g, '-');
 };
 
-const getOrientationIcon = (orientation: ContentInfo['orientation']) => {
+const getOrientationIcon = (orientation: TPlayableAdContentInfo['orientation']) => {
     if (orientation === 'portrait') {
         return `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="6" y="3" width="12" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
@@ -244,7 +234,7 @@ const getOrientationIcon = (orientation: ContentInfo['orientation']) => {
     return null;
 };
 
-const getOrientationName = (orientation: ContentInfo['orientation']) => {
+const getOrientationName = (orientation: TPlayableAdContentInfo['orientation']) => {
     if (orientation === 'portrait') return '세로형';
     if (orientation === 'landscape') return '가로형';
     if (orientation === 'responsive') return '반응형';
@@ -257,7 +247,7 @@ const getNetworkImage = (networkName: string) => {
     return imagePath;
 };
 
-const getDevTypeImage = (devTypeName: ContentInfo['devType'][number]) => {
+const getDevTypeImage = (devTypeName: TPlayableAdContentInfo['devType'][number]) => {
     if (devTypeName === 'code') {
         return `<svg width="16" height="16" data-slot="icon" data-darkreader-inline-stroke="" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5"></path>
@@ -291,14 +281,14 @@ const getShortenedUrl = (url: string) => {
 };
 
 // 카테고리 이름에 해당하는 이미지 경로 반환
-const getCategoryImage = (categoryName: ContentInfo['category']) => {
+const getCategoryImage = (categoryName: TPlayableAdContentInfo['category']) => {
     const imagePath = `category/${ categoryName }.png`;
     return imagePath;
 };
 
 // 카테고리 이름을 한국어로 변환
-const getCategoryName = (category: ContentInfo['category']) => {
-    const categoryNames: Record<ContentInfo['category'], string> = {
+const getCategoryName = (category: TPlayableAdContentInfo['category']) => {
+    const categoryNames: Record<TPlayableAdContentInfo['category'], string> = {
         'game': '게임',
         'shopping': '쇼핑',
         'music': '음악',
@@ -311,7 +301,7 @@ const getCategoryName = (category: ContentInfo['category']) => {
 const loadContentInfo = async () => {
     try {
         const fileName = getJsonFileName(props.title);
-        const response = await $fetch<ContentInfo>(`/info/playablead/${ fileName }.json`);
+        const response = await $fetch<TPlayableAdContentInfo>(`/info/playablead/${ fileName }.json`);
         contentInfo.value = response;
     } catch (error) {
         console.error('JSON 파일 로드 실패:', error);

@@ -24,27 +24,22 @@
 </template>
 
 <script setup lang="ts">
+import type { TWebsiteContentInfo } from '@/types/content';
+
 const route = useRoute();
 
-const getType = () => {
-    return route.query['type'] as string ?? 'website';
+const queryString = (key: string): string => {
+    const value = route.query[key];
+    return typeof value === 'string' ? value : '';
 };
 
-const getSubType = () => {
-    return route.query['sub'] as string ?? '';
-};
-
-const getContentType = () => {
-    return route.query['contenttype'] as string ?? 'file';
-};
-
-const getName = () => {
-    return route.query['name'] as string ?? '';
-};
-
-const getLink = () => {
-    return route.query['link'] as string ?? '';
-};
+const getType = () => queryString('type') || 'website';
+const getSubType = () => queryString('sub');
+const getContentType = () => queryString('contenttype') || 'file';
+const getName = () => queryString('name');
+const getLink = () => queryString('link');
+const getIframeUrl = () => queryString('iframeurl');
+const getInfoTitle = () => queryString('infotitle') || getName();
 
 const opt = reactive({
     isPending: <boolean> true,
@@ -53,6 +48,8 @@ const opt = reactive({
     contentType: <string> getContentType(),
     url: <string> getName(),
     link: <string> getLink(),
+    iframeUrl: <string> getIframeUrl(),
+    infoTitle: <string> getInfoTitle(),
     fullSrc: <string> '',
 });
 
@@ -70,10 +67,51 @@ const clickExternal = () => {
     );
 };
 
-const getFullSrc = () => {
-    const src = `${ opt.type }/${ opt.sub }/${ opt.url.toLowerCase() }/index.html`;
-    console.log('src: ', src);
-    return src;
+const getInfoFolder = (type: string): string | null => {
+    if (type === 'etc' || type === 'website') {
+        return type;
+    }
+    return null;
+};
+
+const getJsonFileName = (title: string) => {
+    return title.toLowerCase().replace(/\s+/g, '-');
+};
+
+const getLocalSrc = () => {
+    return `${ opt.type }/${ opt.sub }/${ opt.url.toLowerCase() }/index.html`;
+};
+
+const loadInfoUrl = async (): Promise<string> => {
+    const folder = getInfoFolder(opt.type);
+    if (!folder || !opt.infoTitle) {
+        return '';
+    }
+    try {
+        const fileName = getJsonFileName(opt.infoTitle);
+        const info = await $fetch<TWebsiteContentInfo>(`/info/${ folder }/${ fileName }.json`);
+        return info?.url?.trim() || '';
+    } catch (error) {
+        console.warn('content info load failed:', error);
+        return '';
+    }
+};
+
+const resolveFullSrc = async () => {
+    if (opt.iframeUrl) {
+        console.log('src (query): ', opt.iframeUrl);
+        return opt.iframeUrl;
+    }
+
+    const infoUrl = await loadInfoUrl();
+    if (infoUrl) {
+        console.log('src (info.url): ', infoUrl);
+        return infoUrl;
+    }
+
+    const localSrc = getLocalSrc();
+    console.log('src (local): ', localSrc);
+    return localSrc;
 };
 
 onMounted(async () => {
@@ -98,7 +136,9 @@ onMounted(async () => {
     opt.contentType = getContentType();
     opt.url = getName();
     opt.link = getLink();
-    opt.fullSrc = getFullSrc();
+    opt.iframeUrl = getIframeUrl();
+    opt.infoTitle = getInfoTitle();
+    opt.fullSrc = await resolveFullSrc();
     opt.isPending = false;
 });
 

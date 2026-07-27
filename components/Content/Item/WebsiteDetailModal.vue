@@ -140,17 +140,7 @@
 </template>
 
 <script setup lang="ts">
-type WebsiteContentInfo = {
-    title: string;
-    description?: string;
-    links: string[];
-    company: string;
-    companyLink: string;
-    productLinks: string[];
-    // techStack?: string[];
-    devices?: ('mobile' | 'desktop' | 'tablet')[];
-    category: 'corporate' | 'landing' | 'event' | 'portfolio' | 'shopping';
-};
+import type { TWebsiteContentInfo } from '@/types/content';
 
 const props = defineProps<{
     title: string;
@@ -163,7 +153,7 @@ const opt = reactive({
     isPending: <boolean> true,
 });
 
-const contentInfo = ref<WebsiteContentInfo | null>(null);
+const contentInfo = ref<TWebsiteContentInfo | null>(null);
 
 const closeModal = () => {
     const modalState = useState('modal', () => ({
@@ -178,7 +168,19 @@ const closeModal = () => {
 };
 
 const openContent = () => {
-    navigateTo(props.link);
+    const info = contentInfo.value;
+    const linkUrl = new URL(props.link, 'http://local.invalid');
+    const query: Record<string, string> = {};
+    linkUrl.searchParams.forEach((value, key) => {
+        query[key] = value;
+    });
+    if (info?.url) {
+        query.iframeurl = info.url;
+    }
+    navigateTo({
+        path: '/content',
+        query,
+    });
     closeModal();
 };
 
@@ -201,8 +203,8 @@ const getShortenedUrl = (url: string) => {
     }
 };
 
-const getCategoryName = (category: WebsiteContentInfo['category']) => {
-    const categoryNames: Record<WebsiteContentInfo['category'], string> = {
+const getCategoryName = (category: TWebsiteContentInfo['category']) => {
+    const categoryNames: Record<TWebsiteContentInfo['category'], string> = {
         corporate: '기업/브랜드',
         landing: '랜딩',
         event: '이벤트/프로모션',
@@ -212,8 +214,8 @@ const getCategoryName = (category: WebsiteContentInfo['category']) => {
     return categoryNames[category] || category;
 };
 
-const getDeviceName = (device: NonNullable<WebsiteContentInfo['devices']>[number]) => {
-    const deviceNames: Record<NonNullable<WebsiteContentInfo['devices']>[number], string> = {
+const getDeviceName = (device: NonNullable<TWebsiteContentInfo['devices']>[number]) => {
+    const deviceNames: Record<NonNullable<TWebsiteContentInfo['devices']>[number], string> = {
         mobile: '모바일',
         desktop: '데스크톱',
         tablet: '태블릿',
@@ -225,7 +227,7 @@ const loadContentInfo = async () => {
     try {
         const fileName = getJsonFileName(props.title);
         const basePath = props.infoPath ?? 'website';
-        const response = await $fetch<WebsiteContentInfo>(`/info/${ basePath }/${ fileName }.json`);
+        const response = await $fetch<TWebsiteContentInfo>(`/info/${ basePath }/${ fileName }.json`);
         contentInfo.value = response;
     } catch (error) {
         console.error('JSON 파일 로드 실패:', error);
